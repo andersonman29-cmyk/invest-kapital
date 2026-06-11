@@ -228,14 +228,7 @@
             margin-bottom: 48px;
             max-width: 550px;
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .justified-line {
-            text-align: justify;
-            text-align-last: justify;
-            width: 100%;
+            text-wrap: balance;
         }
 
         .hero-buttons {
@@ -452,10 +445,13 @@
 
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 80px; }
-            .hero-subtitle { margin: 0 auto 48px; align-items: center; }
-            .justified-line { text-align: center; text-align-last: center; }
-            .hero-buttons { justify-content: center; margin: 0 auto; }
+            .hero-content > div:first-child { margin: 0 auto 32px !important; }
+            .hero-subtitle { margin: 0 auto 48px; text-align: center; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 100%; gap: 16px; margin: 0 auto; }
+            .hero-buttons a { width: 100%; text-align: center; white-space: normal; padding: 16px 20px; font-size: 1rem; }
             .pas-grid, .features-grid { grid-template-columns: 1fr; }
+            .store-links { flex-direction: column; gap: 16px; }
+            .store-logo { width: 100%; justify-content: center; max-width: 300px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -490,10 +486,9 @@
                     <text x="0" y="355" font-size="44" font-weight="700" textLength="1000" lengthAdjust="spacing" fill="#dcdcdc" filter="url(#volumetric)">ИНВЕСТИЦИИ В УСЛОВИЯХ ШТОРМА</text>
                 </svg>
             </div>
-            <div class="hero-subtitle blur-fade delay-100">
-                <div class="justified-line">Узнайте, почему главный враг вашего капитала</div>
-                <div class="justified-line">сидит не на бирже, а в вашей собственной голове</div>
-            </div>
+            <p class="hero-subtitle blur-fade delay-100">
+                Узнайте, почему главный враг вашего капитала сидит не на бирже, а в вашей собственной голове.
+            </p>
             
             <div class="hero-buttons blur-fade delay-200">
                 <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn">Купить на Ozon</a>
