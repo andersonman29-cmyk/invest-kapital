@@ -3,288 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Капитал Вопреки | Инвестиции в условиях шторма | Андрей Полющенко</title>
-    <meta name="description" content="Книга о поведенческих финансах, инфляции образа жизни и создании портфеля, который переживет любой кризис. Навигатор для инвестора.">
-    <!-- Подключаем шрифты: массивный Montserrat (как на обложке) и Inter для текста -->
+    <title>Капитал Вопреки | Андрей Полющенко</title>
+    <meta name="description" content="Книга о поведенческих финансах и создании портфеля.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            /* Цветовая палитра на основе новой обложки (Темно-синий, Золотой, Белый) */
-            --bg-color: #020305; /* Глубокий темно-синий */
-            --surface-color: #06080e; /* Чуть светлее для карточек */
-            --border-color: #1a2a44;
-            --text-main: #ffffff; /* Белые буквы */
-            --text-muted: #a0aec0; /* Серо-голубой для вторичного текста */
-            --accent-gold: #d4af37; /* Классический золотой */
-            --accent-gold-hover: #e8c655; /* Светлое золото */
-            --accent-glow: rgba(212, 175, 55, 0.2);
+            var(--background): #020305;
+            --surface: #06080e;
+            --surface-hover: rgba(6, 8, 14, 0.5);
+            --border: #1a2a44;
+            --text-main: #ffffff;
+            --text-muted: #a0aec0;
+            --gold-primary: #d4af37;
+            --gold-light: #f9d776;
+            --gold-dark: #c59b27;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: #020305;
+            color: #ffffff;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            /* Легкий паттерн волн на фоне */
-            
+            position: relative;
         }
 
-        /* Utility */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
-        .highlight {
-            color: var(--accent-gold);
-        }
 
-        /* Typography - Замена на Montserrat для соответствия обложке */
-        h1, h2, h3, .bold-font, .pas-number {
+        h1, h2, h3, h4, .font-display {
             font-family: 'Montserrat', sans-serif;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
             text-transform: uppercase;
         }
 
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            letter-spacing: -0.01em;
-            margin-bottom: 48px;
-            line-height: 1.2;
+        /* 1. AURORA BACKGROUND COMPONENT */
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #020305;
+        }
+        
+        .aurora-bg::after {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background-image: 
+                radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(26, 42, 68, 0.2) 0%, transparent 40%);
+            background-size: 100% 100%;
+            animation: aurora 30s ease infinite alternate;
+            filter: blur(60px);
         }
 
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        @keyframes aurora {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-5%, 5%) scale(1.1); }
+            100% { transform: translate(5%, -5%) scale(1); }
         }
 
-        p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
+        /* 2. BLUR FADE COMPONENT */
+        .blur-fade {
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, filter, transform;
+        }
+        
+        .blur-fade.in-view {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
         }
 
-        /* Buttons (Premium Gold aesthetic) */
-        .cta-btn {
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+
+        /* Typography & Utilities */
+        .gold-gradient-text {
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 3. SHIMMER BUTTON COMPONENT */
+        .shimmer-btn {
+            position: relative;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #c59b27, #f9d776);
-            color: #000;
-            font-weight: 800;
+            padding: 18px 40px;
             font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
             font-size: 1.125rem;
-            padding: 18px 36px;
-            border-radius: 4px;
-            text-decoration: none;
+            color: #000;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            transition: all 0.3s ease;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+            border-radius: 6px;
             border: none;
             cursor: pointer;
-            width: 100%;
-            max-width: 320px;
-            box-shadow: 0 10px 30px var(--accent-glow);
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            z-index: 1;
         }
 
-        .cta-btn:hover {
-            background: linear-gradient(135deg, #d4af37, #ffe392);
-            transform: translateY(-3px);
+        .shimmer-btn::before {
+            content: "";
+            position: absolute;
+            top: 0; left: -100%; width: 200%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 3s infinite linear;
+            z-index: -1;
+        }
+
+        .shimmer-btn:hover {
+            transform: translateY(-4px) scale(1.02);
             box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
         }
 
-        .secondary-btn {
+        @keyframes shimmer {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        .outline-btn {
             background: transparent;
-            border: 2px solid var(--accent-gold);
-            color: var(--accent-gold);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            color: var(--gold-primary);
+            padding: 16px 38px;
             box-shadow: none;
         }
 
-        .secondary-btn:hover {
-            background: rgba(212, 175, 55, 0.05);
-            color: #fff;
-            border-color: #fff;
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
-            transform: translateY(-3px);
+        .outline-btn::before { display: none; }
+
+        .outline-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
         }
 
-        /* Hero Section */
+        /* 4. GLASSMORPHISM CARDS */
+        .glass-card {
+            background: rgba(6, 8, 14, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.05);
+        }
+
+        .glass-card:hover::before { opacity: 1; }
+
+        .glass-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HERO SECTION */
         .hero {
-            padding: 100px 0 80px;
+            min-height: 90vh;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 60px;
             align-items: center;
-            min-height: 95vh;
-            border-bottom: 1px solid var(--border-color);
+            padding: 120px 0 80px;
             position: relative;
         }
 
-        /* Декоративный компас (крест) на фоне - Сделан более заметным */
-        .hero::before { display: none; 
-            content: '✛';
-            position: absolute;
-            font-size: 60rem;
-            color: rgba(212, 175, 55, 0.04); /* Золотистый, более видимый */
-            top: -20%;
-            right: -10%;
-            z-index: 0;
-            pointer-events: none;
-            line-height: 1;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        .pre-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--accent-gold);
-            font-weight: 800;
-            margin-bottom: 24px;
-            display: inline-block;
-            border-bottom: 2px solid var(--accent-gold);
-            padding-bottom: 5px;
+        .hero h1 {
+            display: none; 
         }
 
         .hero-subtitle {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 300;
-            color: var(--text-main);
-            margin-bottom: 40px;
-            max-width: 600px;
-            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            max-width: 550px;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .justified-line {
+            text-align: justify;
+            text-align-last: justify;
+            width: 100%;
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+            max-width: 550px;
+        }
+        
+        .hero-buttons a {
+            flex: 1;
+            white-space: nowrap;
         }
 
-        /* 3D BOOK MOCKUP */
+        /* 5. INTERACTIVE 3D BOOK (Framer Motion equivalent in Vanilla JS) */
         .hero-visual {
             position: relative;
             display: flex;
             justify-content: center;
-            z-index: 2;
-            perspective: 1200px;
+            perspective: 1500px;
         }
 
+        .book-glow {
+            position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 250px; height: 350px;
+            background: var(--gold-primary);
+            filter: blur(80px);
+            opacity: 0.2;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .hero-visual:hover .book-glow { opacity: 0.4; }
+
         .book {
-            width: 300px;
-            height: 450px;
+            width: 300px; height: 450px;
             position: relative;
             transform-style: preserve-3d;
             transform: rotateY(-25deg) rotateX(5deg);
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-            animation: float 6s ease-in-out infinite;
+            transition: transform 0.1s linear; 
+            cursor: pointer;
         }
 
-        @keyframes float {
+        .book.idle {
+            animation: book-float 6s ease-in-out infinite;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes book-float {
             0% { transform: translateY(0px) rotateY(-25deg) rotateX(5deg); }
             50% { transform: translateY(-15px) rotateY(-20deg) rotateX(8deg); }
             100% { transform: translateY(0px) rotateY(-25deg) rotateX(5deg); }
         }
 
-        .book:hover {
-            transform: rotateY(-10deg) rotateX(2deg) scale(1.05);
-        }
-
-        /* Лицевая сторона (Обложка) */
         .book-front {
-            position: absolute;
-            width: 300px;
-            height: 450px;
+            position: absolute; width: 100%; height: 100%;
+            background-color: #000;
+            background-image: url('cover_new.jpg');
+            background-position: center;
+            background-size: cover;
             transform: translateZ(20px);
-            background: url('cover_new.jpg') center/cover;
-            border-radius: 2px 5px 5px 2px;
-            box-shadow: inset 4px 0 10px rgba(0,0,0,0.1);
+            border-radius: 2px 6px 6px 2px;
+            box-shadow: inset 4px 0 10px rgba(0,0,0,0.2);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        /* Блик на обложке */
         .book-front::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 15%, rgba(255,255,255,0) 30%);
-            border-radius: 2px 5px 5px 2px;
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.1) 15%, transparent 30%);
+            border-radius: inherit;
+            pointer-events: none;
         }
 
-        /* Задняя сторона */
         .book-back {
-            position: absolute;
-            width: 300px;
-            height: 450px;
-            transform: translateZ(-20px) rotateY(180deg);
+            position: absolute; width: 100%; height: 100%;
             background: #040810;
-            border-radius: 5px 2px 2px 5px;
+            transform: translateZ(-20px) rotateY(180deg);
+            border-radius: 6px 2px 2px 6px;
             box-shadow: -30px 30px 50px rgba(0,0,0,0.9), 0 0 40px rgba(212,175,55,0.1);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        /* Корешок (Слева) */
         .book-spine {
-            position: absolute;
-            width: 40px;
-            height: 450px;
+            position: absolute; width: 40px; height: 100%;
+            background: linear-gradient(to right, #020408, #0a1324, #020408);
             transform: rotateY(-90deg) translateZ(20px);
             transform-origin: left;
-            background: linear-gradient(to right, #020408, #0a1324, #020408);
             border-radius: 3px 0 0 3px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        /* Страницы (Справа) */
         .book-pages {
-            position: absolute;
-            width: 38px;
-            height: 440px;
-            top: 5px;
-            left: 300px;
+            position: absolute; width: 38px; height: 98%;
+            top: 1%; left: 100%;
+            background: repeating-linear-gradient(to right, #dcdcdc, #f5f5f5 2px, #fff 4px);
             transform: rotateY(90deg);
             transform-origin: left;
-            background: repeating-linear-gradient(to right, #dcdcdc, #f5f5f5 2px, #fff 4px);
             border-radius: 0 4px 4px 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        /* PAS Section */
-        .pas-section {
-            padding: 120px 0;
-            background-color: var(--surface-color);
-            position: relative;
-        }
-
-        .pas-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        /* SECTIONS */
+        section { padding: 120px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.2;
         }
 
         .pas-grid {
@@ -293,186 +359,151 @@
             gap: 40px;
         }
 
-        .pas-card {
-            padding: 40px 30px;
-            background: #06080e;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pas-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-5px);
-            background: var(--bg-color);
+        .pas-card h3 {
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
         }
 
-        .pas-number {
-            font-size: 4rem;
-            color: rgba(255,255,255,0.03);
-            line-height: 1;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
-
-        /* What's Inside */
-        .features {
-            padding: 120px 0;
-        }
-
-        .checklist-grid {
+        /* FEATURES */
+        .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px 80px;
         }
 
-        .check-item {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
+        .feature-item {
+            display: flex; gap: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover { transform: translateX(10px); }
+
+        .feature-icon {
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            opacity: 0.8;
+            transition: opacity 0.3s, transform 0.3s;
         }
 
-        .check-icon {
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            margin-top: 3px;
+        .feature-item:hover .feature-icon {
+            opacity: 1;
+            transform: scale(1.2) rotate(15deg);
         }
 
-        .check-text h4 {
-            font-family: 'Montserrat', sans-serif;
+        .feature-text h4 {
             font-size: 1.25rem;
-            font-weight: 800;
             margin-bottom: 12px;
-            color: var(--text-main);
-            text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .check-text p {
-            font-size: 1rem;
-            margin-bottom: 0;
-            color: #cbd5e1;
-        }
+        .feature-text p { color: var(--text-muted); }
 
-        /* Testimonial / Quote */
+
+
+        /* QUOTE */
         .quote-block {
-            padding: 80px 0;
+            background: linear-gradient(180deg, transparent, rgba(6, 8, 14, 0.8), transparent);
             text-align: center;
-            background-color: var(--surface-color);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
         }
 
         .quote-text {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             font-weight: 300;
-            color: #fff;
             max-width: 900px;
             margin: 0 auto;
-            line-height: 1.5;
+            line-height: 1.6;
             font-style: italic;
+            color: #fff;
+            text-wrap: balance;
         }
 
-        /* Final CTA */
-        .final-cta {
-            padding: 120px 0;
-            text-align: center;
-            position: relative;
+        /* FINAL CTA */
+        .final-cta { text-align: center; position: relative; }
+        .final-cta-bg {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 80%; height: 80%; background: var(--gold-primary);
+            filter: blur(150px); opacity: 0.05; z-index: 0; pointer-events: none;
         }
-
-        .final-cta h2 {
-            margin-bottom: 24px;
-        }
-
-        .final-cta p {
-            max-width: 600px;
-            margin: 0 auto 48px;
-        }
+        .final-cta .container { position: relative; z-index: 1; }
+        .final-cta p { max-width: 700px; margin: 0 auto 48px; font-size: 1.25rem; text-wrap: balance; }
 
         .store-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid var(--border-color);
+            display: flex; justify-content: center; gap: 30px;
+            margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .store-logo {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 4px;
-            border: 1px solid transparent;
+            color: var(--text-muted); text-decoration: none; font-weight: 500;
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 6px; border: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .store-logo:hover {
-            color: var(--accent-gold);
-            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--gold-primary);
             background: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.2);
         }
 
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            background-color: #03060a;
-        }
-
-        footer p {
-            font-size: 0.875rem;
-            margin-bottom: 0;
-            color: #4a5568;
-        }
+        footer { padding: 40px 0; text-align: center; background: #010203; }
+        footer p { font-size: 0.875rem; color: #4a5568; }
 
         @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding-top: 80px;
-            }
-            .hero::before { display: none;  display: none; }
-            .pre-title { margin: 0 auto 24px; }
-            .hero-subtitle { margin: 0 auto 40px; }
-            .hero-buttons { justify-content: center; }
-            .pas-grid, .checklist-grid { grid-template-columns: 1fr; }
-            .quote-text { font-size: 1.4rem; }
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 80px; }
+            .hero-subtitle { margin: 0 auto 48px; align-items: center; }
+            .justified-line { text-align: center; text-align-last: center; }
+            .hero-buttons { justify-content: center; margin: 0 auto; }
+            .pas-grid, .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO SECTION: 5-Second Rule + Nautical Aesthetic -->
+    <div class="aurora-bg"></div>
+
+    <!-- HERO SECTION -->
     <header class="hero container">
         <div class="hero-content">
-            <span class="pre-title">Навигатор для частного инвестора</span>
-            <h1>Капитал<br><span class="highlight">Вопреки</span></h1>
-            <p class="hero-subtitle">ВСначала нам придётся вылечить мозг  вычистить когнитивные вирусы, которые заставляют умного человека терять деньги.</p>
+            <div class="blur-fade" style="width: 100%; max-width: 550px; margin-bottom: 32px;">
+                <svg viewBox="0 0 1000 380" width="100%" style="font-family: 'Montserrat', sans-serif; font-weight: 900; overflow: visible;">
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#c59b27" />
+                            <stop offset="50%" stop-color="#f9d776" />
+                            <stop offset="100%" stop-color="#c59b27" />
+                        </linearGradient>
+                        <filter id="volumetric" x="-10%" y="-10%" width="120%" height="120%">
+                            <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000" flood-opacity="0.9"/>
+                            <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#fff" flood-opacity="0.2"/>
+                        </filter>
+                        <filter id="volumetricGold" x="-10%" y="-10%" width="120%" height="120%">
+                            <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="1"/>
+                            <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#d4af37" flood-opacity="0.5"/>
+                        </filter>
+                    </defs>
+                    <g transform="scale(1, 1.3)">
+                        <text x="0" y="100" font-size="135" textLength="1000" lengthAdjust="spacing" fill="#fff" filter="url(#volumetric)">КАПИТАЛ</text>
+                        <text x="0" y="215" font-size="135" textLength="1000" lengthAdjust="spacing" fill="url(#goldGradient)" filter="url(#volumetricGold)">ВОПРЕКИ</text>
+                    </g>
+                    <text x="0" y="355" font-size="44" font-weight="700" textLength="1000" lengthAdjust="spacing" fill="#dcdcdc" filter="url(#volumetric)">ИНВЕСТИЦИИ В УСЛОВИЯХ ШТОРМА</text>
+                </svg>
+            </div>
+            <div class="hero-subtitle blur-fade delay-100">
+                <div class="justified-line">Узнайте, почему главный враг вашего капитала</div>
+                <div class="justified-line">сидит не на бирже, а в вашей собственной голове</div>
+            </div>
             
-            <div class="hero-buttons">
-                <!-- РЕАЛЬНАЯ ССЫЛКА НА OZON -->
-                <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="cta-btn">Купить на Ozon</a>
-                <!-- РЕАЛЬНАЯ ССЫЛКА НА ЛИТРЕС -->
-                <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="cta-btn secondary-btn">Читать на ЛитРес</a>
+            <div class="hero-buttons blur-fade delay-200">
+                <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn">Купить на Ozon</a>
+                <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="shimmer-btn outline-btn">Читать на ЛитРес</a>
             </div>
         </div>
 
-        <!-- 3D BOOK MOCKUP -->
-        <div class="hero-visual">
-            <div class="book">
+        <div class="hero-visual blur-fade delay-300">
+            <div class="book-glow"></div>
+            <div class="book idle" id="book3d">
                 <div class="book-front"></div>
                 <div class="book-spine"></div>
                 <div class="book-pages"></div>
@@ -481,85 +512,93 @@
         </div>
     </header>
 
-    <!-- PAS FRAMEWORK: Problem, Agitation, Solution -->
-    <section class="pas-section">
+    <!-- PAS FRAMEWORK -->
+    <section>
         <div class="container">
-            <h2 style="text-align: center; max-width: 800px; margin: 0 auto 60px;">Почему ваши доходы растут, а <span class="highlight">капитал — нет?</span></h2>
+            <h2 class="section-title blur-fade">Почему ваши доходы растут <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">а капитал нет</span></h2>
             
             <div class="pas-grid">
-                <div class="pas-card">
-                    <span class="pas-number">01</span>
-                    <h3>Ловушка HENRY</h3>
-                    <p>оведенческие экономисты называют это lifestyle creep. еньги уходят на кристально понятные вещи. ровень жизни растет, но капитал не растёт ни на один рубль.</p>
+                <div class="glass-card blur-fade delay-100">
+                    <div class="glass-card-content">
+                        <h3 style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 16px; text-transform: uppercase;">Иллюзия роста</h3>
+                        <p>Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным богатством?</p>
+                    </div>
                 </div>
-                <div class="pas-card">
-                    <span class="pas-number">02</span>
-                    <h3>Два Капитана</h3>
-                    <p>95% инвесторов проигрывают индексу, потому что наш мозг эволюционировал в саванне. Он заставляет вас паниковать на дне и покупать на самом пике.</p>
+                <div class="glass-card blur-fade delay-200">
+                    <div class="glass-card-content">
+                        <h3 style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 16px; text-transform: uppercase;">Внутренний враг</h3>
+                        <p>Внутри вашей черепной коробки идет непрерывная война за право распоряжаться счетами. Почему интеллект чаще всего проигрывает биологии?</p>
+                    </div>
                 </div>
-                <div class="pas-card">
-                    <span class="pas-number">03</span>
-                    <h3>Пробоины в трюме</h3>
-                    <p>Инфраструктура важнее прогнозов. Если вы не понимаете, как работают контуры хранения, налоги и сальдирование убытков — вы отдаете капитал системе.</p>
+                <div class="glass-card blur-fade delay-300">
+                    <div class="glass-card-content">
+                        <h3 style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 16px; text-transform: uppercase;">Системная ошибка</h3>
+                        <p>Инфраструктура важнее рыночных прогнозов. Непонимание архитектуры налогов заставляет вас отдавать капитал системе даже при растущем рынке.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES & OBJECTION HANDLING -->
-    <section class="features">
+    <!-- FEATURES -->
+    <section>
         <div class="container">
-            <h2 style="text-align: center;">Анатомия портфеля. <br><span class="highlight">Никакой воды.</span></h2>
+            <h2 class="section-title blur-fade">Архитектура портфеля <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">От иллюзий к математике</span></h2>
             
-            <div class="checklist-grid" style="margin-top: 60px;">
-                <div class="check-item">
-                    <div class="check-icon">✦</div>
-                    <div class="check-text">
-                        <h4>Арифметика отчаяния</h4>
-                        <p>Жесткий математический расчет того, почему классическая модель "накоплю на пенсию на вкладе" больше не работает при реальной инфляции.</p>
+            <div class="features-grid">
+                <div class="feature-item blur-fade delay-100">
+                    <div class="feature-icon">✦</div>
+                    <div class="feature-text">
+                        <h4>Математика потерь</h4>
+                        <p>Жесткий расчет того, почему классические безопасные инструменты гарантируют обесценивание капитала на длинном горизонте.</p>
                     </div>
                 </div>
-                <div class="check-item">
-                    <div class="check-icon">✦</div>
-                    <div class="check-text">
-                        <h4>Навигация в шторм</h4>
-                        <p>Разбор того, что происходит в голове и в портфеле в момент кризиса. Как привязать себя к мачте, когда все остальные в панике продают.</p>
+                <div class="feature-item blur-fade delay-200">
+                    <div class="feature-icon">✦</div>
+                    <div class="feature-text">
+                        <h4>Психология паники</h4>
+                        <p>Разбор того, что происходит в мозге в момент кризиса. Как сохранить рассудок и активы, когда все остальные совершают ошибки.</p>
                     </div>
                 </div>
-                <div class="check-item">
-                    <div class="check-icon">✦</div>
-                    <div class="check-text">
-                        <h4>Алхимия портфеля</h4>
-                        <p>ИИС-3 против ПДС. ETF против ОФЗ. Математически выверенная симуляция разных налоговых режимов на горизонте 15 лет.</p>
+                <div class="feature-item blur-fade delay-300">
+                    <div class="feature-icon">✦</div>
+                    <div class="feature-text">
+                        <h4>Налоговая оптимизация</h4>
+                        <p>Математически выверенная симуляция разных налоговых режимов. Как законно сохранить ту часть прибыли, которую забирает государство.</p>
                     </div>
                 </div>
-                <div class="check-item">
-                    <div class="check-icon">✦</div>
-                    <div class="check-text">
-                        <h4>Стратегия рантье</h4>
-                        <p>Рысокая дивидендная доходность  не признак щедрости, а симптом умирания. азоблачение дивидендных иллюзий и стратегия безопасного изъятия капитала.</p>
+                <div class="feature-item blur-fade delay-400">
+                    <div class="feature-icon">✦</div>
+                    <div class="feature-text">
+                        <h4>Стратегия изъятия</h4>
+                        <p>Высокая дивидендная доходность — не всегда признак надежности. Разбор иллюзий и математика безопасного изъятия капитала.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- QUOTE SECTION (БЕЗ ПОДПИСИ АВТОРА) -->
+    <!-- QUOTE SECTION -->
     <section class="quote-block">
         <div class="container">
-            <p class="quote-text">«Инвестирование — невыносимо скучное занятие. И если вам не скучно — значит, вы точно делаете что-то не так.»</p>
+            <p class="quote-text blur-fade">
+                <span style="display: block; margin-bottom: 0.25em;">«Главная угроза вашему капиталу</span>
+                <span style="display: block; margin-bottom: 0.25em;">кроется не в рыночных кризисах.</span>
+                <span class="gold-gradient-text" style="display: block;">Она смотрит на вас из зеркала»</span>
+            </p>
         </div>
     </section>
 
     <!-- FINAL CTA -->
     <section id="buy" class="final-cta">
+        <div class="final-cta-bg"></div>
         <div class="container">
-            <h2>Ваш мозг не создан для богатства. <br>Но вы <span class="highlight">можете его перехитрить.</span></h2>
-            <p>моциональная реакция на новостной фон  гарантированный путь к бедности. Холодный расчёт последствий  путь к капиталу. олучите прагматичную систему, которая защитит вас от инфляции и когнитивных искажений.</p>
+            <h2 class="section-title blur-fade">Ваш мозг не создан для богатства <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">Но вы можете его перехитрить</span></h2>
+            <p class="blur-fade delay-100"><span style="display: block; margin-bottom: 0.25em;">Эта книга — не обещание быстрого богатства</span><span style="display: block;">Это набор прагматичных инструментов для работы с вашим капиталом</span></p>
             
-            <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="cta-btn" style="max-width: 400px; padding: 24px 40px; font-size: 1.25rem;">Купить книгу</a>
+            <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn blur-fade delay-200" style="padding: 24px 60px; font-size: 1.25rem;">Купить книгу</a>
             
-            <div class="store-links">
+            <div class="store-links blur-fade delay-300">
                 <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="store-logo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
                     Ozon
@@ -567,11 +606,6 @@
                 <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="store-logo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
                     ЛитРес
-                </a>
-                <!-- Будущие ссылки для WB и Яндекс Книг -->
-                <a href="#" class="store-logo" style="opacity: 0.5;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    Яндекс.Книги (скоро)
                 </a>
             </div>
         </div>
@@ -583,5 +617,47 @@
         </div>
     </footer>
 
+    <!-- SCRIPTS FOR 21st COMPONENTS -->
+    <script>
+        // 1. BLUR FADE LOGIC
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.blur-fade').forEach(el => observer.observe(el));
+        });
+
+        // 2. INTERACTIVE 3D BOOK LOGIC
+        const book = document.getElementById('book3d');
+        const visualArea = document.querySelector('.hero-visual');
+
+        if(visualArea && book) {
+            visualArea.addEventListener('mousemove', (e) => {
+                book.classList.remove('idle');
+                const rect = visualArea.getBoundingClientRect();
+                const x = e.clientX - rect.left; 
+                const y = e.clientY - rect.top;  
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -15; 
+                const rotateY = ((x - centerX) / centerX) * 15;
+                
+                book.style.transform = `rotateX(${rotateX + 5}deg) rotateY(${rotateY - 20}deg) scale(1.05)`;
+            });
+
+            visualArea.addEventListener('mouseleave', () => {
+                book.classList.add('idle');
+                book.style.transform = ''; 
+            });
+        }
+    </script>
 </body>
 </html>
