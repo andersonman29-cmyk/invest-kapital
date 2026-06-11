@@ -12,6 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     
     <style>
+        @font-face {
+            font-family: 'Bebas Custom';
+            src: url('fonts/BebasNeue-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
         :root {
             var(--background): #020305;
             --surface: #06080e;
@@ -22,12 +29,23 @@
             --gold-primary: #d4af37;
             --gold-light: #f9d776;
             --gold-dark: #c59b27;
+            
+            /* Swiss Typographic Scale (Perfect Fourth 1.333 Ratio) */
+            --step--1: clamp(0.75rem, 0.71rem + 0.17vw, 0.88rem);
+            --step-0: clamp(1.00rem, 0.96rem + 0.22vw, 1.13rem);
+            --step-1: clamp(1.33rem, 1.28rem + 0.26vw, 1.50rem);
+            --step-2: clamp(1.78rem, 1.69rem + 0.44vw, 2.00rem);
+            --step-3: clamp(2.37rem, 2.22rem + 0.73vw, 2.66rem);
+            --step-4: clamp(3.16rem, 2.90rem + 1.27vw, 3.55rem);
+            --step-5: clamp(4.21rem, 3.79rem + 2.11vw, 4.73rem);
+            --step-6: clamp(5.61rem, 4.93rem + 3.42vw, 6.31rem);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
+            font-size: var(--step-0);
             background-color: #020305;
             color: #ffffff;
             line-height: 1.6;
@@ -43,8 +61,9 @@
         }
 
         h1, h2, h3, h4, .font-display {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Bebas Custom', 'Montserrat', sans-serif;
             text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
         /* 1. AURORA BACKGROUND COMPONENT */
@@ -117,9 +136,9 @@
             align-items: center;
             justify-content: center;
             padding: 18px 40px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.125rem;
+            font-family: 'Bebas Custom', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: var(--step-2);
             color: #000;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -222,21 +241,29 @@
             display: none; 
         }
 
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px; /* SINGLE UNIFIED GRID WIDTH */
+        }
+
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: var(--step-0);
             font-weight: 300;
             color: var(--text-muted);
             margin-bottom: 48px;
-            max-width: 550px;
+            width: 100%;
+            max-width: 100%;
             line-height: 1.6;
-            text-wrap: balance;
+            text-align: justify;
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
-            max-width: 550px;
+            width: 100%;
+            max-width: 100%;
         }
         
         .hero-buttons a {
@@ -340,11 +367,11 @@
         section { padding: 120px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
         
         .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            font-weight: 800;
+            font-size: var(--step-5);
+            font-weight: 700;
             text-align: center;
             margin-bottom: 60px;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
         .pas-grid {
@@ -354,10 +381,10 @@
         }
 
         .pas-card h3 {
-            font-size: 1.5rem;
+            font-size: var(--step-4);
             color: var(--gold-primary);
             margin-bottom: 16px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
         }
 
         /* FEATURES */
@@ -387,9 +414,9 @@
         }
 
         .feature-text h4 {
-            font-size: 1.25rem;
+            font-size: var(--step-3);
             margin-bottom: 12px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
         }
 
         .feature-text p { color: var(--text-muted); }
@@ -403,7 +430,7 @@
         }
 
         .quote-text {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: var(--step-3);
             font-weight: 300;
             max-width: 900px;
             margin: 0 auto;
@@ -421,7 +448,7 @@
             filter: blur(150px); opacity: 0.05; z-index: 0; pointer-events: none;
         }
         .final-cta .container { position: relative; z-index: 1; }
-        .final-cta p { max-width: 700px; margin: 0 auto 48px; font-size: 1.25rem; text-wrap: balance; }
+        .final-cta p { max-width: 700px; margin: 0 auto 48px; font-size: var(--step-1); text-wrap: balance; }
 
         .store-links {
             display: flex; justify-content: center; gap: 30px;
@@ -442,7 +469,7 @@
         }
 
         footer { padding: 40px 0; text-align: center; background: #010203; }
-        footer p { font-size: 0.875rem; color: #4a5568; }
+        footer p { font-size: var(--step--1); color: #4a5568; }
 
         @media (max-width: 900px) {
             section { padding: 60px 0; }
@@ -468,8 +495,8 @@
     <!-- HERO SECTION -->
     <header class="hero container">
         <div class="hero-content">
-            <div class="blur-fade" style="width: 100%; max-width: 550px; margin-bottom: 32px;">
-                <svg viewBox="0 0 1000 380" width="100%" style="font-family: 'Montserrat', sans-serif; font-weight: 900; overflow: visible;">
+            <div class="blur-fade" style="width: 100%; margin-bottom: 32px;">
+                <svg viewBox="0 0 1000 520" width="100%" style="font-family: 'Bebas Custom', 'Montserrat', sans-serif; font-weight: 900; overflow: visible;">
                     <defs>
                         <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stop-color="#c59b27" />
@@ -485,11 +512,16 @@
                             <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#d4af37" flood-opacity="0.5"/>
                         </filter>
                     </defs>
-                    <g transform="scale(1, 1.3)">
-                        <text x="0" y="100" font-size="135" textLength="1000" lengthAdjust="spacing" fill="#fff" filter="url(#volumetric)">КАПИТАЛ</text>
-                        <text x="0" y="215" font-size="135" textLength="1000" lengthAdjust="spacing" fill="url(#goldGradient)" filter="url(#volumetricGold)">ВОПРЕКИ</text>
+                    
+                    <!-- Масштабируем высоту букв (вытянутость) -->
+                    <g transform="scale(1, 1.15)">
+                        <!-- Максимально жирный шрифт: размер 230 + обводка 3px -->
+                        <text x="45 196.6 348.3 500 651.6 803.3 955" y="175" font-size="230" font-weight="900" stroke="#fff" stroke-width="3" text-anchor="middle" fill="#fff" filter="url(#volumetric)">КАПИТАЛ</text>
+                        <text x="45 196.6 348.3 500 651.6 803.3 955" y="365" font-size="230" font-weight="900" stroke="url(#goldGradient)" stroke-width="3" text-anchor="middle" fill="url(#goldGradient)" filter="url(#volumetricGold)">ВОПРЕКИ</text>
                     </g>
-                    <text x="0" y="355" font-size="44" font-weight="700" textLength="1000" lengthAdjust="spacing" fill="#dcdcdc" filter="url(#volumetric)">ИНВЕСТИЦИИ В УСЛОВИЯХ ШТОРМА</text>
+                    
+                    <!-- Подзаголовок опущен вниз на ~10px относительно прежнего отступа, y=495 -->
+                    <text x="500" y="495" font-size="52" font-weight="900" stroke="#dcdcdc" stroke-width="1" textLength="990" lengthAdjust="spacing" text-anchor="middle" fill="#dcdcdc" filter="url(#volumetric)">ИНВЕСТИЦИИ В УСЛОВИЯХ ШТОРМА</text>
                 </svg>
             </div>
             <p class="hero-subtitle blur-fade delay-100">
@@ -597,7 +629,7 @@
             <h2 class="section-title blur-fade">Ваш мозг не создан для богатства <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">Но вы можете его перехитрить</span></h2>
             <p class="blur-fade delay-100"><span style="display: block; margin-bottom: 0.25em;">Эта книга — не обещание быстрого богатства</span><span style="display: block;">Это набор прагматичных инструментов для работы с вашим капиталом</span></p>
             
-            <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn blur-fade delay-200" style="padding: 24px 60px; font-size: 1.25rem;">Купить книгу</a>
+            <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn blur-fade delay-200" style="padding: 24px 60px; font-size: var(--step-3);">Купить книгу</a>
             
             <div class="store-links blur-fade delay-300">
                 <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="store-logo">
