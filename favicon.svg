@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe699"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a6711"/>
+    </linearGradient>
+    <linearGradient id="goldDial" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff2cc"/>
+      <stop offset="100%" stop-color="#e6c25e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ободок -->
+  <circle cx="50" cy="50" r="50" fill="#664d00"/>
+  <circle cx="50" cy="50" r="46" fill="url(#goldRing)"/>
+  <circle cx="50" cy="50" r="38" fill="url(#goldDial)"/>
+  
+  <!-- Огромные русские буквы -->
+  <g font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#8a6711" text-anchor="middle">
+    <text x="50" y="33">С</text>
+    <text x="50" y="85">Ю</text>
+    <text x="79" y="58">В</text>
+    <text x="21" y="58">З</text>
+  </g>
+
+  <!-- Наклоненная сине-красная стрелка (поворот на 35 градусов) -->
+  <g transform="rotate(35 50 50)">
+    <path d="M50 8 L56 50 L44 50 Z" fill="#1d4ed8"/>
+    <path d="M50 92 L56 50 L44 50 Z" fill="#dc2626"/>
+  </g>
+
+  <!-- Центр -->
+  <circle cx="50" cy="50" r="8" fill="#d4af37"/>
+  <circle cx="50" cy="50" r="4" fill="#1a365d"/>
+</svg>
