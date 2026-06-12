@@ -488,16 +488,16 @@
         footer p { font-size: var(--step--1); color: #4a5568; }
 
         @media (max-width: 900px) {
+            /* Мобильная типографика: используем clamp() и vw, чтобы шрифты динамически сжимались на самых узких экранах (iPhone SE и т.д.) */
             :root {
-                /* Более аккуратный и мелкий шрифт для мобильных устройств */
-                --step--1: 0.875rem;
-                --step-0: 1rem;
-                --step-1: 1.125rem;
-                --step-2: 1.25rem;
-                --step-3: 1.5rem;
-                --step-4: 1.75rem;
-                --step-5: 2.25rem;
-                --step-6: 2.75rem;
+                --step--1: clamp(0.8rem, 3.5vw, 0.875rem); /* от 12.8px до 14px */
+                --step-0: clamp(0.9rem, 4vw, 1rem); /* от 14.4px до 16px */
+                --step-1: clamp(1rem, 4.5vw, 1.125rem); /* от 16px до 18px */
+                --step-2: clamp(1.125rem, 5vw, 1.25rem); /* от 18px до 20px */
+                --step-3: clamp(1.25rem, 6vw, 1.5rem); /* от 20px до 24px */
+                --step-4: clamp(1.4rem, 7vw, 1.75rem); /* от 22.4px до 28px */
+                --step-5: clamp(1.75rem, 8.5vw, 2.25rem); /* от 28px до 36px */
+                --step-6: clamp(2rem, 10vw, 2.75rem); /* от 32px до 44px */
             }
             section { padding: 60px 0; }
             .section-title { margin-bottom: 40px; }
