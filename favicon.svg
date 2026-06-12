@@ -1,36 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
   <defs>
-    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffe699"/>
-      <stop offset="50%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#8a6711"/>
+    <!-- Размытие для реалистичных теней -->
+    <filter id="blurShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" />
+    </filter>
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.5" />
+    </filter>
+
+    <!-- 1. Внешний корпус (Свет слева-сверху: яркий блик слева, тень справа) -->
+    <linearGradient id="outerCasing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe484" />
+      <stop offset="30%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#4a3000" />
     </linearGradient>
-    <linearGradient id="goldDial" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fff2cc"/>
-      <stop offset="100%" stop-color="#e6c25e"/>
+
+    <!-- 2. Внутренняя стенка-скос (Инверсия света: тень слева-сверху от корпуса, блик справа-снизу) -->
+    <linearGradient id="innerWall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1000" />
+      <stop offset="60%" stop-color="#8a5a00" />
+      <stop offset="100%" stop-color="#ffea8c" />
     </linearGradient>
+
+    <!-- 3. Дно циферблата (Самое темное место, легкий свет падает только в правый нижний угол) -->
+    <radialGradient id="dialFace" cx="70%" cy="70%" r="70%">
+      <stop offset="0%" stop-color="#0a1b3f" />
+      <stop offset="100%" stop-color="#010205" />
+    </radialGradient>
+
+    <!-- Градиенты 3D-стрелки -->
+    <linearGradient id="needleGoldBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffea8c" />
+      <stop offset="100%" stop-color="#d4af37" />
+    </linearGradient>
+    <linearGradient id="needleGoldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a67100" />
+      <stop offset="100%" stop-color="#5c4000" />
+    </linearGradient>
+    <linearGradient id="needleSilverBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cccccc" />
+    </linearGradient>
+    <linearGradient id="needleSilverDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#999999" />
+      <stop offset="100%" stop-color="#333333" />
+    </linearGradient>
+    
+    <!-- Центральная металлическая заклепка (свет слева) -->
+    <radialGradient id="pivotPin" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#888888" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
   </defs>
 
-  <!-- Ободок -->
-  <circle cx="50" cy="50" r="50" fill="#664d00"/>
-  <circle cx="50" cy="50" r="46" fill="url(#goldRing)"/>
-  <circle cx="50" cy="50" r="38" fill="url(#goldDial)"/>
+  <!-- Тень от корпуса компаса (падает на виртуальный стол) -->
+  <circle cx="25" cy="27" r="22" fill="#000000" opacity="0.6" filter="url(#blurShadow)" />
+
+  <!-- Внешний ободок корпуса -->
+  <circle cx="24" cy="24" r="23" fill="url(#outerCasing)" />
+
+  <!-- Внутренний скос (создает эффект глубокого колодца) -->
+  <circle cx="24" cy="24" r="21" fill="url(#innerWall)" />
+
+  <!-- Глубокий циферблат -->
+  <circle cx="24" cy="24" r="19" fill="url(#dialFace)" />
+
+  <!-- Глубокая внутренняя тень по краям циферблата (Ambient Occlusion) -->
+  <circle cx="24" cy="24" r="18.5" fill="none" stroke="#000000" stroke-width="1.5" opacity="0.8" filter="url(#softBlur)" />
+
+  <!-- Засечки нанесенные на дно циферблата -->
+  <!-- Юг, Запад, Восток (белые, полупрозрачные) -->
+  <g opacity="0.5">
+    <rect x="23.5" y="40.5" width="1" height="1.5" fill="#ffffff" />
+    <rect x="6" y="23.5" width="1.5" height="1" fill="#ffffff" />
+    <rect x="40.5" y="23.5" width="1.5" height="1" fill="#ffffff" />
+  </g>
   
-  <!-- Огромные русские буквы -->
-  <g font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#8a6711" text-anchor="middle">
-    <text x="50" y="33">С</text>
-    <text x="50" y="85">Ю</text>
-    <text x="79" y="58">В</text>
-    <text x="21" y="58">З</text>
+  <!-- Северная засечка (Классическая красная, яркая и четкая) -->
+  <rect x="23.5" y="6" width="1" height="1.5" fill="#ff2a2a" />
+
+  <!-- ПАДАЮЩАЯ ТЕНЬ ОТ СТРЕЛКИ (Стрелка "парит" над дном, тень падает вправо-вниз) -->
+  <g transform="translate(2, 3) rotate(45 24 24)" filter="url(#blurShadow)" opacity="0.8">
+    <polygon points="24,8 30,24 24,40 18,24" fill="#000000" />
   </g>
 
-  <!-- Наклоненная сине-красная стрелка (поворот на 35 градусов) -->
-  <g transform="rotate(35 50 50)">
-    <path d="M50 8 L56 50 L44 50 Z" fill="#1d4ed8"/>
-    <path d="M50 92 L56 50 L44 50 Z" fill="#dc2626"/>
+  <!-- Сама 3D-стрелка -->
+  <g transform="rotate(45 24 24)">
+    <!-- Верхняя половина (Золотая, рост) -->
+    <polygon points="24,6 24,24 18,24" fill="url(#needleGoldBright)" />
+    <polygon points="24,6 30,24 24,24" fill="url(#needleGoldDark)" />
+    
+    <!-- Нижняя половина (Серебряная) -->
+    <polygon points="24,42 24,24 18,24" fill="url(#needleSilverDark)" />
+    <polygon points="24,42 30,24 24,24" fill="url(#needleSilverBright)" />
   </g>
 
-  <!-- Центр -->
-  <circle cx="50" cy="50" r="8" fill="#d4af37"/>
-  <circle cx="50" cy="50" r="4" fill="#1a365d"/>
+  <!-- Металлический штырь по центру -->
+  <circle cx="25.5" cy="25.5" r="3.5" fill="#000000" opacity="0.5" filter="url(#softBlur)" /> <!-- Тень штыря -->
+  <circle cx="24" cy="24" r="4" fill="url(#pivotPin)" /> <!-- Штырь -->
+  <circle cx="24" cy="24" r="1.5" fill="url(#needleGoldBright)" /> <!-- Золотая шляпка -->
+
+  <!-- Блик стекла-линзы, накрывающего компас -->
+  <path d="M 6 24 A 18 18 0 0 1 42 24 A 20 12 0 0 0 6 24 Z" fill="#ffffff" opacity="0.12" />
+
 </svg>

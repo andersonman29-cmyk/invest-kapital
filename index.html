@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Капитал Вопреки</title>
+    <title>Капитал Вопреки. Инвестиции в условиях шторма</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="Книга о поведенческих финансах и создании портфеля.">
+    <meta name="description" content="Книга о поведенческих финансах и создании портфеля. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным богатством?">
+    
+    <!-- SEO & OpenGraph (Telegram, VK, WhatsApp) -->
+    <meta name="keywords" content="инвестиции, поведенческие финансы, Капитал Вопреки, сохранение капитала, финансовая грамотность, портфельные инвестиции, инвестиции для новичков, личные финансы, управление капиталом">
+    
+    <!-- Open Graph (Facebook, ВКонтакте, Telegram, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Капитал Вопреки">
+    <meta property="og:title" content="Капитал Вопреки. Инвестиции в условиях шторма">
+    <meta property="og:description" content="Книга о поведенческих финансах и создании портфеля. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным богатством?">
+    <meta property="og:image" content="cover_new.jpg">
+    
+    <!-- Twitter Card (Twitter, Slack, Discord) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Капитал Вопреки. Инвестиции в условиях шторма">
+    <meta name="twitter:description" content="Книга о поведенческих финансах. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Почему?">
+    <meta name="twitter:image" content="cover_new.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +58,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        p { text-wrap: pretty; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -135,7 +153,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 18px 40px;
+            padding: 22px 40px 14px; /* Оптическое выравнивание шрифта Bebas Neue по вертикали */
             font-family: 'Bebas Custom', 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: var(--step-2);
@@ -176,7 +194,7 @@
             background: transparent;
             border: 2px solid rgba(212, 175, 55, 0.5);
             color: var(--gold-primary);
-            padding: 16px 38px;
+            padding: 20px 38px 12px; /* Оптическое выравнивание с учетом рамки 2px */
             box-shadow: none;
         }
 
@@ -414,7 +432,7 @@
         }
 
         .feature-text h4 {
-            font-size: var(--step-3);
+            font-size: var(--step-1);
             margin-bottom: 12px;
             letter-spacing: 0.03em;
         }
@@ -472,13 +490,33 @@
         footer p { font-size: var(--step--1); color: #4a5568; }
 
         @media (max-width: 900px) {
+            :root {
+                /* Более аккуратный и мелкий шрифт для мобильных устройств */
+                --step--1: 0.875rem;
+                --step-0: 1rem;
+                --step-1: 1.125rem;
+                --step-2: 1.25rem;
+                --step-3: 1.5rem;
+                --step-4: 1.75rem;
+                --step-5: 2.25rem;
+                --step-6: 2.75rem;
+            }
             section { padding: 60px 0; }
             .section-title { margin-bottom: 40px; }
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 80px; padding-bottom: 40px; }
-            .hero-content > div:first-child { margin: 0 auto 32px !important; }
+            /* Уменьшаем ширину главного блока со словом КАПИТАЛ ВОПРЕКИ, чтобы дать отступы по краям */
+            .hero-content > div:first-child { width: 85% !important; margin: 0 auto 32px !important; }
             .hero-subtitle { margin: 0 auto 32px; text-align: center; }
+            
+            /* Кнопки: гибкие, с правильным отступом и защитой от переполнения */
             .hero-buttons { flex-direction: column; width: 100%; max-width: 100%; gap: 16px; margin: 0 auto; }
-            .hero-buttons a { width: 100%; text-align: center; white-space: normal; padding: 16px 20px; font-size: 1rem; }
+            .hero-buttons a { width: 100%; text-align: center; white-space: normal; word-wrap: break-word; font-size: 1.125rem; }
+            .hero-buttons .shimmer-btn { padding: 18px 20px 12px !important; }
+            .hero-buttons .outline-btn { padding: 16px 20px 10px !important; }
+            
+            /* Уменьшаем 3D-книгу, чтобы она гарантированно влезала в старые экраны (iPhone SE, 320px) */
+            .hero-visual { transform: scale(0.85); margin-top: -20px; }
+
             .pas-grid { gap: 24px; }
             .features-grid { gap: 32px; }
             .pas-grid, .features-grid { grid-template-columns: 1fr; }
@@ -628,25 +666,17 @@
         <div class="container">
             <h2 class="section-title blur-fade">Ваш мозг не создан для богатства <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">Но вы можете его перехитрить</span></h2>
             <p class="blur-fade delay-100"><span style="display: block; margin-bottom: 0.25em;">Эта книга — не обещание быстрого богатства</span><span style="display: block;">Это набор прагматичных инструментов для работы с вашим капиталом</span></p>
-            
-            <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn blur-fade delay-200" style="padding: 24px 60px; font-size: var(--step-3);">Купить книгу</a>
-            
-            <div class="store-links blur-fade delay-300">
-                <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="store-logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                    Ozon
-                </a>
-                <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="store-logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                    ЛитРес
-                </a>
+            <div class="hero-buttons blur-fade delay-200" style="justify-content: center; max-width: 600px; margin: 0 auto;">
+                <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn">Купить на Ozon</a>
+                <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="shimmer-btn outline-btn">Читать на ЛитРес</a>
             </div>
+
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>© 2026 Андрей Полющенко. Инвестиции связаны с риском. Не является индивидуальной инвестиционной рекомендацией.</p>
+            <p>© 2026. Инвестиции связаны с риском. Не является индивидуальной инвестиционной рекомендацией.</p>
         </div>
     </footer>
 
