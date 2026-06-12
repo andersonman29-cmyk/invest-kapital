@@ -33,6 +33,7 @@
             src: url('fonts/BebasNeue-Bold.ttf') format('truetype');
             font-weight: 700;
             font-style: normal;
+            font-display: swap; /* Оптимизация загрузки шрифта на мобилках */
         }
 
         :root {
@@ -58,8 +59,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        p { text-wrap: pretty; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -455,7 +454,6 @@
             line-height: 1.6;
             font-style: italic;
             color: #fff;
-            text-wrap: balance;
         }
 
         /* FINAL CTA */
@@ -466,7 +464,7 @@
             filter: blur(150px); opacity: 0.05; z-index: 0; pointer-events: none;
         }
         .final-cta .container { position: relative; z-index: 1; }
-        .final-cta p { max-width: 700px; margin: 0 auto 48px; font-size: var(--step-1); text-wrap: balance; }
+        .final-cta p { max-width: 700px; margin: 0 auto 48px; font-size: var(--step-1); }
 
         .store-links {
             display: flex; justify-content: center; gap: 30px;
@@ -504,12 +502,12 @@
             section { padding: 60px 0; }
             .section-title { margin-bottom: 40px; }
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 80px; padding-bottom: 40px; }
-            /* Уменьшаем ширину главного блока со словом КАПИТАЛ ВОПРЕКИ, чтобы дать отступы по краям */
+            /* Центрируем и ограничиваем все элементы героя до 85% ширины экрана, чтобы они были на одной линии */
             .hero-content > div:first-child { width: 85% !important; margin: 0 auto 32px !important; }
-            .hero-subtitle { margin: 0 auto 32px; text-align: center; }
+            .hero-subtitle { width: 85%; margin: 0 auto 32px; text-align: center; }
             
             /* Кнопки: гибкие, с правильным отступом и защитой от переполнения */
-            .hero-buttons { flex-direction: column; width: 100%; max-width: 100%; gap: 16px; margin: 0 auto; }
+            .hero-buttons { flex-direction: column; width: 85%; max-width: 85%; gap: 16px; margin: 0 auto; }
             .hero-buttons a { width: 100%; text-align: center; white-space: normal; word-wrap: break-word; font-size: 1.125rem; }
             .hero-buttons .shimmer-btn { padding: 18px 20px 12px !important; }
             .hero-buttons .outline-btn { padding: 16px 20px 10px !important; }
