@@ -200,6 +200,16 @@
             stroke-linejoin: round;
         }
 
+        /* Пока не загрузились шрифты книги и текста, страница скрыта (не дольше 1,5 с), потом мягко проявляется:
+           так не видно запасного шрифта и ничего не прыгает при его подмене */
+        .fonts-wait body {
+            opacity: 0;
+        }
+
+        body {
+            transition: opacity 0.3s ease;
+        }
+
         /* Появление блоков: анимация, а не transition, чтобы не мешать наведениям */
         .js .reveal {
             opacity: 0;
@@ -719,7 +729,7 @@
             width: var(--cw);
             height: var(--cw);
             transform-style: preserve-3d;
-            transform: translateZ(var(--cz)) translate(calc(var(--cx, 0) * 6px), calc(var(--cy, 0) * 4px)) rotateX(calc(var(--cy, 0) * -12deg)) rotateY(calc(var(--cx, 0) * 16deg));
+            transform: translateZ(var(--cz)) translate(calc(var(--cx, 0) * 6px), calc(var(--cy, 0) * 4px)) rotateX(calc(var(--cy, 0) * -8deg)) rotateY(calc(var(--cx, 0) * 16deg));
             transition: transform 0.6s var(--ease-soft);
         }
 
@@ -1287,12 +1297,12 @@
         }
 
         .format-cover .book {
-            transform: rotateY(calc(-24deg + var(--bx, 0) * 22deg)) rotateX(calc(4deg + var(--by, 0) * -12deg));
+            transform: rotateY(calc(-24deg + var(--bx, 0) * 16deg)) rotateX(calc(4deg + var(--by, 0) * -8deg));
         }
 
         .format-cover .case {
             inset: auto;
-            transform: rotateY(calc(-30deg + var(--cx, 0) * 22deg)) rotateX(calc(4deg + var(--cy, 0) * -12deg));
+            transform: rotateY(calc(-30deg + var(--cx, 0) * 16deg)) rotateX(calc(4deg + var(--cy, 0) * -8deg));
         }
 
         /* ---------- ФИНАЛ (чёрная): мысль и призыв ---------- */
@@ -1547,6 +1557,20 @@
             }
         }
     </style>
+    <script>
+        // Страница появляется, когда готовы шрифты (Bebas для заголовков, Inter для текста); если сеть медленная — через 1,5 с
+        (function () {
+            var root = document.documentElement, done = function () { root.classList.remove('fonts-wait'); };
+            if (!document.fonts || !document.fonts.load) return;
+            root.classList.add('fonts-wait');
+            Promise.all([
+                document.fonts.load('700 1em "Bebas Custom"', 'КАПИТАЛ'),
+                document.fonts.load('400 1em Inter', 'Аа'),
+                document.fonts.load('400 1em Inter', '0')
+            ]).then(done, done);
+            setTimeout(done, 1500);
+        })();
+    </script>
 </head>
 
 <body>
@@ -1958,12 +1982,35 @@
                 put(h, Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width - 0.5) * 2)),
                     Math.max(-1, Math.min(1, ((e.clientY - r.top) / r.height - 0.5) * 2)));
             };
-            area.addEventListener('pointermove', e => { if (e.pointerType === 'mouse' || e.pressure > 0) move(e); });
-            area.addEventListener('pointerdown', e => { clearTimeout(timer); move(e); });
+            // Мышь: только настоящее движение курсора. Когда страницу прокручивают, курсор стоит, а обложка едет под ним —
+            // браузер шлёт такое событие с нулевым сдвигом, его пропускаем, иначе обложка «падает» навстречу курсору
+            area.addEventListener('pointermove', e => {
+                if (e.pointerType === 'mouse') { if (e.movementX || e.movementY) move(e); }
+                else if (cur && e.pressure > 0) move(e);
+            });
             area.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') release(); });
-            const up = e => { if (e.pointerType !== 'mouse') { clearTimeout(timer); timer = setTimeout(release, 700); } };
-            area.addEventListener('pointerup', up);
-            area.addEventListener('pointercancel', up);
+            // Палец: наклон только от касания самой обложки. Если палец сразу повёл страницу (прокрутка), ничего не наклоняем
+            let hold = 0;
+            area.addEventListener('pointerdown', e => {
+                if (e.pointerType === 'mouse') { move(e); return; }
+                clearTimeout(timer);
+                clearTimeout(hold);
+                const p = { clientX: e.clientX, clientY: e.clientY };
+                hold = setTimeout(() => { hold = 0; move(p); }, 150);
+            });
+            area.addEventListener('pointerup', e => {
+                if (e.pointerType === 'mouse') return;
+                if (hold) { clearTimeout(hold); hold = 0; move(e); }
+                clearTimeout(timer);
+                timer = setTimeout(release, 700);
+            });
+            area.addEventListener('pointercancel', e => {
+                if (e.pointerType === 'mouse') return;
+                clearTimeout(hold);
+                hold = 0;
+                clearTimeout(timer);
+                timer = setTimeout(release, 300);
+            });
         };
         const heroVisual = document.getElementById('heroVisual');
         const stage = document.getElementById('stage');
