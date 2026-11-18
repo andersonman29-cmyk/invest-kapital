@@ -1,0 +1,15 @@
+Шрифты, используемые на сайте
+=============================
+
+Оба шрифта распространяются по лицензии SIL Open Font License, Version 1.1.
+Она разрешает свободное использование, в том числе на сайтах и в коммерческих проектах.
+Полный текст лицензии: https://openfontlicense.org/open-font-license-official-text/
+
+1) Bebas Neue (bebas-neue-bold.woff, BebasNeue-Bold.ttf)
+   Copyright (c) 2010 by Ryoichi Tsunekawa. All rights reserved.
+   Выпуск: Dharma Type (http://dharmatype.com).
+   Файл .woff содержит те же начертания, упакованные в формат WOFF (без изменения букв).
+
+2) Inter (inter-cyrillic.woff2, inter-latin.woff2)
+   Copyright (c) The Inter Project Authors (https://github.com/rsms/inter).
+   Файлы получены с Google Fonts (fonts.gstatic.com) 29.10.2026.

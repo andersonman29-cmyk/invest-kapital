@@ -1,74 +1,174 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Капитал Вопреки. Инвестиции в условиях шторма</title>
+    <title>Капитал Вопреки. Инвестиции в условиях шторма — Андрей Полющенко</title>
+    <meta name="description"
+        content="Книга Андрея Полющенко о поведенческих финансах и портфеле. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Почему так — и что с этим делать.">
+    <link rel="canonical" href="https://kapital-vopreki.ru/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Андрей Полющенко">
+    <meta name="theme-color" content="#000000">
+    <script>document.documentElement.className += ' js';</script>
+
+    <!-- Иконки: ico для Яндекса и старых браузеров, svg для вкладок, png для iPhone -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="Книга о поведенческих финансах и создании портфеля. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным богатством?">
-    
-    <!-- SEO & OpenGraph (Telegram, VK, WhatsApp) -->
-    <meta name="keywords" content="инвестиции, поведенческие финансы, Капитал Вопреки, сохранение капитала, финансовая грамотность, портфельные инвестиции, инвестиции для новичков, личные финансы, управление капиталом">
-    
-    <!-- Open Graph (Facebook, ВКонтакте, Telegram, WhatsApp) -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Open Graph (Telegram, VK, WhatsApp) -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Капитал Вопреки">
+    <meta property="og:url" content="https://kapital-vopreki.ru/">
     <meta property="og:title" content="Капитал Вопреки. Инвестиции в условиях шторма">
-    <meta property="og:description" content="Книга о поведенческих финансах и создании портфеля. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным богатством?">
-    <meta property="og:image" content="cover_new.jpg">
-    
+    <meta property="og:description"
+        content="Книга о поведенческих финансах и создании портфеля. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным богатством?">
+    <meta property="og:image" content="https://kapital-vopreki.ru/img/og-cover.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Обложка книги «Капитал Вопреки. Инвестиции в условиях шторма», автор Андрей Полющенко">
+
     <!-- Twitter Card (Twitter, Slack, Discord) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Капитал Вопреки. Инвестиции в условиях шторма">
-    <meta name="twitter:description" content="Книга о поведенческих финансах. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Почему?">
-    <meta name="twitter:image" content="cover_new.jpg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    
+    <meta name="twitter:description"
+        content="Книга о поведенческих финансах. Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Почему?">
+    <meta name="twitter:image" content="https://kapital-vopreki.ru/img/og-cover.jpg">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Капитал Вопреки. Инвестиции в условиях шторма",
+      "author": {
+        "@type": "Person",
+        "name": "Андрей Полющенко"
+      },
+      "url": "https://kapital-vopreki.ru/",
+      "image": "https://kapital-vopreki.ru/img/og-cover.jpg",
+      "description": "Практическое руководство для тех, кто хочет начать инвестировать, но не знает как: поведенческие ловушки рынка, архитектура личного портфеля и стратегия капитала.",
+      "inLanguage": "ru",
+      "bookFormat": "https://schema.org/EBook",
+      "typicalAgeRange": "16-",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.litres.ru/73949334/",
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Шрифты лежат на сайте (папка fonts): запросов к Google нет, всё грузится с вашего хостинга -->
+    <link rel="preload" href="fonts/bebas-neue-bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+
     <style>
+        /* ==========================================================================
+           ВАРИАНТ «CAPITAL»
+           Основа: готовая страница + правила из DESIGN.md сайта Capital
+           (каталог ui.gradientdeck.com): чёрные и кремовые секции по очереди,
+           заголовки шрифтом книги (Bebas Neue Bold, белые и золотые буквы), подписи-бейджи над заголовками,
+           плавные наведения и появления блоков, как в основной странице, один акцентный цвет (у нас золото),
+           закреплённая нижняя панель с единственной цветной кнопкой.
+           Чтобы поменять характер всей страницы, достаточно поправить токены в :root.
+           ========================================================================== */
         @font-face {
             font-family: 'Bebas Custom';
-            src: url('fonts/BebasNeue-Bold.ttf') format('truetype');
+            src: url('fonts/bebas-neue-bold.woff') format('woff');
             font-weight: 700;
             font-style: normal;
-            font-display: swap; /* Оптимизация загрузки шрифта на мобилках */
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: swap;
+            src: url('fonts/inter-cyrillic.woff2') format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: swap;
+            src: url('fonts/inter-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
 
         :root {
-            var(--background): #020305;
-            --surface: #06080e;
-            --surface-hover: rgba(6, 8, 14, 0.5);
-            --border: #1a2a44;
-            --text-main: #ffffff;
-            --text-muted: #a0aec0;
-            --gold-primary: #d4af37;
-            --gold-light: #f9d776;
-            --gold-dark: #c59b27;
-            
-            /* Swiss Typographic Scale (Perfect Fourth 1.333 Ratio) */
-            --step--1: clamp(0.75rem, 0.71rem + 0.17vw, 0.88rem);
-            --step-0: clamp(1.00rem, 0.96rem + 0.22vw, 1.13rem);
-            --step-1: clamp(1.33rem, 1.28rem + 0.26vw, 1.50rem);
-            --step-2: clamp(1.78rem, 1.69rem + 0.44vw, 2.00rem);
-            --step-3: clamp(2.37rem, 2.22rem + 0.73vw, 2.66rem);
-            --step-4: clamp(3.16rem, 2.90rem + 1.27vw, 3.55rem);
-            --step-5: clamp(4.21rem, 3.79rem + 2.11vw, 4.73rem);
-            --step-6: clamp(5.61rem, 4.93rem + 3.42vw, 6.31rem);
+            color-scheme: dark;
+
+            /* Палитра Capital (названия оригинала) */
+            --obsidian: #000000;
+            --bone: #efece6;
+            --charcoal: #1a1a1a;
+            --carbon: #131413;
+            --smoke: #8e8c87;
+            --ash: #bfbcb7;
+            --graphite: #302f2f;
+            --ink: #0d0d0c;
+
+            /* Единственный акцент: золото вместо красного Ember */
+            --gold: #d4af37;
+            --gold-light: #f2cd5c;
+            --gold-deep: #7a6320;
+            --gold-on-light: #8a6d12;
+            /* золото для кремовых секций, держит контраст */
+
+            /* Тексты на кремовых секциях темнее, чем Smoke: иначе нечитаемо */
+            --text-on-light: #45443f;
+            --smoke-on-light: #5c5a55;
+
+            /* Имена, которые используют общие 3D-компоненты книги и футляра */
+            --surface: var(--carbon);
+            --gold-primary: var(--gold);
+            --gold-dark: var(--gold-deep);
+
+            --display: 'Bebas Custom', 'Arial Narrow', Impact, sans-serif;
+            --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+            --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --bar-h: 56px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
 
         body {
-            font-family: 'Inter', sans-serif;
-            font-size: var(--step-0);
-            background-color: #020305;
-            color: #ffffff;
-            line-height: 1.6;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.67;
+            letter-spacing: -0.01em;
+            background: var(--obsidian);
+            color: var(--bone);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            position: relative;
+            overflow-x: clip;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        p {
+            text-wrap: pretty;
         }
 
         .container {
@@ -77,652 +177,1879 @@
             padding: 0 24px;
         }
 
-        h1, h2, h3, h4, .font-display {
-            font-family: 'Bebas Custom', 'Montserrat', sans-serif;
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .ico {
+            width: 22px;
+            height: 22px;
+            flex: none;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Появление блоков: анимация, а не transition, чтобы не мешать наведениям */
+        .js .reveal {
+            opacity: 0;
+        }
+
+        .js .reveal.in-view {
+            opacity: 1;
+            animation: reveal-in 0.8s var(--ease-soft) var(--d, 0s) backwards;
+        }
+
+        @keyframes reveal-in {
+            from { opacity: 0; transform: translateY(18px); }
+        }
+
+        .js .reveal.d1 { --d: 0.1s; }
+        .js .reveal.d2 { --d: 0.2s; }
+        .js .reveal.d3 { --d: 0.3s; }
+        .js .reveal.d4 { --d: 0.4s; }
+
+        /* ---------- Секции: чёрная, кремовая, чёрная... как страницы журнала ---------- */
+        .sec {
+            padding: clamp(80px, 11vw, 140px) 0;
+        }
+
+        .sec.dark {
+            background: var(--obsidian);
+            color: var(--bone);
+        }
+
+        .sec.light {
+            background: var(--bone);
+            color: var(--ink);
+        }
+
+        .head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: clamp(40px, 6vw, 72px);
+            text-align: center;
+        }
+
+        /* Подпись-бейдж над заголовком: моно, 12 пикселей, заглавные, трекинг 8% */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 24px;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .dark .eyebrow {
+            background: var(--bone);
+            color: var(--obsidian);
+        }
+
+        .light .eyebrow {
+            background: var(--charcoal);
+            color: var(--bone);
+        }
+
+        /* Заголовки шрифтом книги: Bebas Neue Bold, белые и золотые, как на обложке и в основной странице */
+        .display {
+            font-family: var(--display);
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.03em;
+            line-height: 1.08;
+            text-wrap: balance;
         }
 
-        /* 1. AURORA BACKGROUND COMPONENT */
-        .aurora-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-            background: #020305;
-        }
-        
-        .aurora-bg::after {
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background-image: 
-                radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(26, 42, 68, 0.2) 0%, transparent 40%);
-            background-size: 100% 100%;
-            animation: aurora 30s ease infinite alternate;
-            filter: blur(60px);
+        h2.display {
+            font-size: clamp(2.875rem, 6.4vw, 5.75rem);
         }
 
-        @keyframes aurora {
-            0% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-5%, 5%) scale(1.1); }
-            100% { transform: translate(5%, -5%) scale(1); }
+        .dark .display {
+            color: var(--bone);
         }
 
-        /* 2. BLUR FADE COMPONENT */
-        .blur-fade {
-            opacity: 0;
-            filter: blur(8px);
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            will-change: opacity, filter, transform;
-        }
-        
-        .blur-fade.in-view {
-            opacity: 1;
-            filter: blur(0);
-            transform: translateY(0);
+        .light .display {
+            color: var(--ink);
         }
 
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-400 { transition-delay: 0.4s; }
-
-        /* Typography & Utilities */
-        .gold-gradient-text {
-            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
-            background-size: 200% auto;
+        /* Золотые буквы: тот же металлический переход, что в основной странице */
+        .accent {
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradient-shift 5s ease infinite;
+            color: transparent;
         }
 
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .dark .accent {
+            background-image: linear-gradient(90deg, #c59b27, #f9d776 50%, #c59b27);
         }
 
-        /* 3. SHIMMER BUTTON COMPONENT */
-        .shimmer-btn {
-            position: relative;
+        .light .accent {
+            background-image: linear-gradient(90deg, #8a6d12, #c59b27 50%, #8a6d12);
+        }
+
+        .sub {
+            max-width: 560px;
+            font-size: 1.25rem;
+            line-height: 1.43;
+            letter-spacing: -0.01em;
+            text-align: justify;
+            text-align-last: center;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .dark .sub {
+            color: rgba(239, 236, 230, 0.72);
+        }
+
+        .light .sub {
+            color: var(--smoke-on-light);
+        }
+
+        .mono {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Каждое предложение короткого абзаца начинается с новой строки: начало нового предложения
+           не остаётся одним-двумя словами «хвостом» в конце предыдущей строки */
+        .s {
+            display: block;
+            text-wrap: balance;
+        }
+
+        .s+.s {
+            margin-top: 0.4em;
+        }
+
+        /* ---------- Кнопки ---------- */
+        .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 22px 40px 14px; /* Оптическое выравнивание шрифта Bebas Neue по вертикали */
-            font-family: 'Bebas Custom', 'Montserrat', sans-serif;
+            gap: 10px;
+            min-height: 50px;
+            padding: 15px 26px 10px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-family: var(--display);
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: var(--step-2);
-            color: #000;
-            text-transform: uppercase;
+            line-height: 1;
             letter-spacing: 0.08em;
+            text-transform: uppercase;
             text-decoration: none;
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
-            border-radius: 6px;
-            border: none;
+            white-space: nowrap;
             cursor: pointer;
+            touch-action: manipulation;
+            position: relative;
+            isolation: isolate;
             overflow: hidden;
-            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-            z-index: 1;
+            transition: transform 0.35s var(--ease-soft), box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease, color 0.4s ease;
         }
 
-        .shimmer-btn::before {
+        .btn:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 3px;
+        }
+
+        /* Единственная цветная кнопка на экране; мягкое свечение, чтобы «горела» на чёрном */
+        .btn-gold {
+            background: linear-gradient(135deg, #c59b27, #f9d776);
+            color: var(--ink);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(242, 205, 92, 0.3), 0 0 22px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Блик пробегает по золотой кнопке, как в основной странице: 3 раза после появления и затихает;
+           двигается только transform. Второй слой при наведении плавно высветляет кнопку */
+        .btn-gold::before {
             content: "";
             position: absolute;
-            top: 0; left: -100%; width: 200%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: shimmer 3s infinite linear;
+            inset: 0 auto 0 0;
+            width: 55%;
+            background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: translateX(-130%) skewX(-18deg);
             z-index: -1;
         }
 
-        .shimmer-btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(100%); }
-        }
-
-        .outline-btn {
-            background: transparent;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-            color: var(--gold-primary);
-            padding: 20px 38px 12px; /* Оптическое выравнивание с учетом рамки 2px */
-            box-shadow: none;
-        }
-
-        .outline-btn::before { display: none; }
-
-        .outline-btn:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold-light);
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
-        }
-
-        /* 4. GLASSMORPHISM CARDS */
-        .glass-card {
-            background: rgba(6, 8, 14, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .glass-card::before {
-            content: '';
+        .btn-gold::after {
+            content: "";
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, transparent 100%);
+            inset: 0;
+            background: rgba(255, 255, 255, 0.16);
             opacity: 0;
             transition: opacity 0.4s ease;
-            z-index: 0;
+            z-index: -1;
+        }
+
+        .reveal.in-view .btn-gold::before,
+        .bar:not(.is-hidden) .btn-gold::before {
+            animation: shine 5s ease-in-out 3;
+        }
+
+        @keyframes shine {
+            0%, 62% { transform: translateX(-130%) skewX(-18deg); }
+            100% { transform: translateX(340%) skewX(-18deg); }
+        }
+
+        .btn-gold:active {
+            background: var(--gold-deep);
+            color: var(--bone);
+            box-shadow: inset 0 3px 0 var(--ink);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--bone);
+            border-color: var(--graphite);
+        }
+
+        .btn-bone {
+            background: var(--bone);
+            color: var(--ink);
+        }
+
+        .btn.is-soon {
+            border-style: dashed;
+            color: var(--smoke);
+            cursor: default;
             pointer-events: none;
         }
 
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.05);
+        .when-live {
+            display: none;
         }
 
-        .glass-card:hover::before { opacity: 1; }
-
-        .glass-card-content {
-            position: relative;
-            z-index: 1;
+        .audio-live .when-live {
+            display: inline;
         }
 
-        /* HERO SECTION */
+        .audio-live .when-soon {
+            display: none;
+        }
+
+        @media (hover: hover) {
+            .btn-gold:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(242, 205, 92, 0.45), 0 0 34px rgba(212, 175, 55, 0.45);
+            }
+
+            .btn-gold:hover::after {
+                opacity: 1;
+            }
+
+            .btn-ghost:hover {
+                border-color: var(--gold);
+                color: var(--gold-light);
+                background-color: rgba(212, 175, 55, 0.1);
+                box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
+            }
+
+            .btn-bone:hover {
+                background-color: #fff;
+                transform: translateY(-3px);
+                box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+            }
+
+            .btn-gold:hover:active,
+            .btn-bone:hover:active {
+                transform: translateY(-1px);
+            }
+        }
+
+        /* ---------- ГЕРОЙ ---------- */
         .hero {
-            min-height: 90vh;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
+            display: flex;
             align-items: center;
-            padding: 120px 0 80px;
-            position: relative;
+            min-height: calc(100vh - var(--bar-h));
+            min-height: calc(100svh - var(--bar-h));
+            padding: clamp(40px, 7vh, 96px) 0 24px;
         }
 
-        .hero h1 {
-            display: none; 
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: clamp(32px, 5vw, 72px);
+            align-items: center;
+            width: 100%;
         }
 
-        .hero-content {
+        /* Заголовок, абзац и кнопки одной ширины, как в основной странице; абзац выровнен по ширине */
+        .hero-block {
             display: flex;
             flex-direction: column;
+            align-items: stretch;
             width: 100%;
-            max-width: 600px; /* SINGLE UNIFIED GRID WIDTH */
+            max-width: 600px;
         }
 
-        .hero-subtitle {
-            font-size: var(--step-0);
-            font-weight: 300;
-            color: var(--text-muted);
-            margin-bottom: 48px;
+        .hero-block .eyebrow {
+            align-self: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .hero-title {
             width: 100%;
-            max-width: 100%;
+            margin-bottom: 30px;
+            font-size: inherit;
+            letter-spacing: normal;
+            line-height: 0;
+        }
+
+        .hero-title svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-sub {
+            margin-bottom: 36px;
+            font-size: clamp(1.0625rem, 1.2vw, 1.25rem);
             line-height: 1.6;
+            letter-spacing: -0.005em;
             text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            color: rgba(239, 236, 230, 0.72);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             width: 100%;
-            max-width: 100%;
-        }
-        
-        .hero-buttons a {
-            flex: 1;
-            white-space: nowrap;
         }
 
-        /* 5. INTERACTIVE 3D BOOK (Framer Motion equivalent in Vanilla JS) */
+        .hero-buttons .btn {
+            flex: 1 1 0;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 22px;
+            margin-top: 22px;
+            color: var(--smoke);
+        }
+
+        /* ЗДЕСЬ ВСТАВЛЯЮТСЯ 3D-КОМПОНЕНТЫ КНИГИ И ФУТЛЯРА ИЗ ОСНОВНОЙ СТРАНИЦЫ БЕЗ ИЗМЕНЕНИЙ */
+        /* 3D-книга + аудиообложка */
         .hero-visual {
             position: relative;
             display: flex;
             justify-content: center;
-            perspective: 1500px;
+            padding: 20px 0 64px;
+        }
+
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            width: calc(var(--bw) * 1.15);
+            height: 30px;
+            translate: -50% 0;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6), transparent 70%);
+            pointer-events: none;
         }
 
         .book-glow {
             position: absolute;
-            top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 250px; height: 350px;
-            background: var(--gold-primary);
-            filter: blur(80px);
-            opacity: 0.2;
+            top: 50%;
+            left: 50%;
+            width: calc(var(--bw) * 1.9);
+            height: calc(var(--bh) * 1.25);
+            translate: -50% -50%;
+            background: radial-gradient(closest-side, rgba(212, 175, 55, 0.26), rgba(212, 175, 55, 0.08) 60%, transparent);
             pointer-events: none;
             transition: opacity 0.5s ease;
         }
 
-        .hero-visual:hover .book-glow { opacity: 0.4; }
-
-        .book {
-            width: 300px; height: 450px;
+        .stack {
+            --cw: calc(var(--bw) * 0.58);
+            /* ширина и высота футляра CD */
+            --cd: calc(var(--cw) * 0.09);
+            /* толщина футляра */
+            --cz: calc(var(--bw) * 0.56);
+            /* насколько футляр выдвинут к зрителю, чтобы не пересекаться с книгой */
             position: relative;
-            transform-style: preserve-3d;
-            transform: rotateY(-25deg) rotateX(5deg);
-            transition: transform 0.1s linear; 
-            cursor: pointer;
+            width: var(--bw);
+            height: var(--bh);
+            margin-right: calc(var(--bw) * 0.36);
+            perspective: 1400px;
         }
 
-        .book.idle {
-            animation: book-float 6s ease-in-out infinite;
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        .stage {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            transform: rotateX(calc(var(--by, 0) * -10deg)) rotateY(calc(var(--bx, 0) * 14deg));
+            transition: transform 0.6s var(--ease-soft);
+        }
+
+        .book {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: rotateY(-24deg) rotateX(4deg);
+            animation: book-float 7s ease-in-out infinite;
+        }
+
+        .is-paused .book {
+            animation-play-state: paused;
         }
 
         @keyframes book-float {
-            0% { transform: translateY(0px) rotateY(-25deg) rotateX(5deg); }
-            50% { transform: translateY(-15px) rotateY(-20deg) rotateX(8deg); }
-            100% { transform: translateY(0px) rotateY(-25deg) rotateX(5deg); }
+            0%, 100% { transform: translateY(0) rotateY(-24deg) rotateX(4deg); }
+            50% { transform: translateY(-12px) rotateY(-19deg) rotateX(6deg); }
         }
 
-        .book-front {
-            position: absolute; width: 100%; height: 100%;
-            background-color: #000;
-            background-image: url('cover_new.jpg');
-            background-position: center;
-            background-size: cover;
-            transform: translateZ(20px);
-            border-radius: 2px 6px 6px 2px;
-            box-shadow: inset 4px 0 10px rgba(0,0,0,0.2);
+        .face {
+            position: absolute;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
 
-        .book-front::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.1) 15%, transparent 30%);
-            border-radius: inherit;
+        .face.front {
+            inset: 0;
+            transform: translateZ(calc(var(--bd) / 2));
+            border-radius: 2px 6px 6px 2px;
+            overflow: hidden;
+            background: #04070d;
+        }
+
+        .face.front img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Корешок-«сгиб» и глянцевый блик на обложке */
+        .face.front::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.38) 0, rgba(0, 0, 0, 0) 2.5%, rgba(255, 255, 255, 0.14) 5.5%, rgba(255, 255, 255, 0) 13%);
             pointer-events: none;
         }
 
-        .book-back {
-            position: absolute; width: 100%; height: 100%;
+        .face.back {
+            inset: 0;
+            transform: rotateY(180deg) translateZ(calc(var(--bd) / 2));
             background: #040810;
-            transform: translateZ(-20px) rotateY(180deg);
             border-radius: 6px 2px 2px 6px;
-            box-shadow: -30px 30px 50px rgba(0,0,0,0.9), 0 0 40px rgba(212,175,55,0.1);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
         }
 
-        .book-spine {
-            position: absolute; width: 40px; height: 100%;
-            background: linear-gradient(to right, #020408, #0a1324, #020408);
-            transform: rotateY(-90deg) translateZ(20px);
-            transform-origin: left;
-            border-radius: 3px 0 0 3px;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
+        .face.spine {
+            top: 0;
+            left: calc(50% - var(--bd) / 2);
+            width: var(--bd);
+            height: 100%;
+            transform: rotateY(-90deg) translateZ(calc(var(--bw) / 2));
+            background: linear-gradient(to right, #020408, #0a1324 50%, #020408);
+            border-radius: 2px 0 0 2px;
         }
 
-        .book-pages {
-            position: absolute; width: 38px; height: 98%;
-            top: 1%; left: 100%;
-            background: repeating-linear-gradient(to right, #dcdcdc, #f5f5f5 2px, #fff 4px);
-            transform: rotateY(90deg);
-            transform-origin: left;
-            border-radius: 0 4px 4px 0;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
+        /* Торец страниц: тёплая бумага из тонких листов, тени у обложек и по краям — не сплошной белый блок */
+        .face.pages {
+            top: 0.8%;
+            left: calc(50% - var(--bd) / 2);
+            width: var(--bd);
+            height: 98.4%;
+            transform: rotateY(90deg) translateZ(calc(var(--bw) / 2 - 2px));
+            border-inline: 2px solid #0b101a;
+            background:
+                linear-gradient(to bottom, rgba(40, 28, 10, 0.65), rgba(40, 28, 10, 0) 11%, rgba(40, 28, 10, 0) 89%, rgba(40, 28, 10, 0.65)),
+                linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.12) 25%, rgba(0, 0, 0, 0.12) 75%, rgba(0, 0, 0, 0.45)),
+                repeating-linear-gradient(to right, #a2977d 0 1px, #d6cdb5 1px 2px, #b3a88f 2px 3px, #ded5be 3px 4px);
+            box-shadow: inset 0 0 7px rgba(50, 36, 14, 0.6);
         }
 
-        /* SECTIONS */
-        section { padding: 120px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
-        
-        .section-title {
-            font-size: var(--step-5);
+        .face.top,
+        .face.bottom {
+            left: 1%;
+            width: 98%;
+            height: var(--bd);
+            border-block: 2px solid #0b101a;
+            background:
+                linear-gradient(to right, rgba(40, 28, 10, 0.6), rgba(40, 28, 10, 0) 10%, rgba(40, 28, 10, 0) 90%, rgba(40, 28, 10, 0.6)),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3)),
+                repeating-linear-gradient(to bottom, #a2977d 0 1px, #d6cdb5 1px 2px, #b3a88f 2px 3px, #ded5be 3px 4px);
+            box-shadow: inset 0 0 6px rgba(50, 36, 14, 0.6);
+        }
+
+        .face.top {
+            top: calc(50% - var(--bd) / 2);
+            transform: rotateX(90deg) translateZ(calc(var(--bh) / 2 - 2px));
+        }
+
+        .face.bottom {
+            top: calc(50% - var(--bd) / 2);
+            transform: rotateX(-90deg) translateZ(calc(var(--bh) / 2 - 2px));
+        }
+
+        /* Аудиокнига в футляре от CD: толщина, светлая кромка пластика и блик, как у книги есть объём */
+        /* Футляр живёт в своей 3D-сцене, отдельно от книги, и за курсором движется иначе:
+           книга наклоняется к курсору, футляр смещается и поворачивается в обратную сторону, с запаздыванием */
+        .case-rig {
+            position: absolute;
+            right: calc(var(--bw) * -0.36);
+            bottom: calc(var(--bw) * -0.1);
+            width: var(--cw);
+            height: var(--cw);
+            transform-style: preserve-3d;
+            transform: translateZ(var(--cz)) translate(calc(var(--cx, 0) * 6px), calc(var(--cy, 0) * 4px)) rotateX(calc(var(--cy, 0) * -12deg)) rotateY(calc(var(--cx, 0) * 16deg));
+            transition: transform 0.6s var(--ease-soft);
+        }
+
+        .case {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: translateY(0) rotateY(-30deg) rotateX(4deg);
+            animation: case-float 6s ease-in-out infinite alternate;
+        }
+
+        .is-paused .case {
+            animation-play-state: paused;
+        }
+
+        @keyframes case-float {
+            from { transform: translateY(0) rotateY(-30deg) rotateX(4deg); }
+            to { transform: translateY(8px) rotateY(-24deg) rotateX(5deg); }
+        }
+
+        .face.c-front {
+            inset: 0;
+            transform: translateZ(calc(var(--cd) / 2));
+            border-radius: 3px;
+            overflow: hidden;
+            background: #05070c;
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.7);
+        }
+
+        .face.c-front picture,
+        .face.c-front img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Ободок футляра: светлая кромка снаружи, тень под ней и тень от шарнира слева */
+        .face.c-front::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.42) 0, rgba(0, 0, 0, 0) 5%);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26), inset 0 0 0 2px rgba(0, 0, 0, 0.35);
+            pointer-events: none;
+        }
+
+        /* Блик на пластике: скользит за курсором (двигается только transform) */
+        .gloss {
+            position: absolute;
+            inset: 0 -60%;
+            background: linear-gradient(105deg, rgba(255, 255, 255, 0) 33%, rgba(255, 255, 255, 0.4) 44%, rgba(255, 255, 255, 0.1) 54%, rgba(255, 255, 255, 0) 66%);
+            transform: translateX(calc(var(--cx, 0) * -18%));
+            transition: transform 0.6s var(--ease-soft);
+            pointer-events: none;
+        }
+
+        .face.c-back {
+            inset: 0;
+            transform: rotateY(180deg) translateZ(calc(var(--cd) / 2));
+            background: #07090d;
+            border-radius: 3px;
+        }
+
+        /* Боковины футляра — тёмный глянцевый пластик, а не «нарисованная трубка»: тонкая яркая кромка у передней
+           грани, мягкое отражение рядом с ней, едва заметный ободок сзади и затемнение у скруглённых концов */
+        .face.c-left,
+        .face.c-right {
+            top: 0;
+            left: calc(50% - var(--cd) / 2);
+            width: var(--cd);
+            height: 100%;
+            background: linear-gradient(to right, #1b1e26, #0d0f14 48%, #171a21);
+        }
+
+        .face.c-left {
+            transform: rotateY(-90deg) translateZ(calc(var(--cw) / 2));
+        }
+
+        .face.c-right {
+            transform: rotateY(90deg) translateZ(calc(var(--cw) / 2));
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 9%, rgba(0, 0, 0, 0) 91%, rgba(0, 0, 0, 0.5)),
+                linear-gradient(to right, rgba(236, 241, 250, 0.9) 0, rgba(236, 241, 250, 0.9) 1.5px, rgba(140, 152, 175, 0.38) 1.5px, rgba(60, 68, 84, 0.3) 20%, rgba(255, 255, 255, 0) 46%),
+                linear-gradient(to left, rgba(190, 200, 218, 0.35) 0, rgba(190, 200, 218, 0.35) 1px, rgba(190, 200, 218, 0) 1px),
+                linear-gradient(to right, #1b1e26, #0d0f14 48%, #171a21);
+        }
+
+        .face.c-top,
+        .face.c-bottom {
+            left: 0;
+            top: calc(50% - var(--cd) / 2);
+            width: 100%;
+            height: var(--cd);
+            background: linear-gradient(to bottom, #1b1e26, #0d0f14 48%, #171a21);
+        }
+
+        .face.c-top {
+            transform: rotateX(90deg) translateZ(calc(var(--cw) / 2));
+            background:
+                linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.5)),
+                linear-gradient(to top, rgba(236, 241, 250, 0.9) 0, rgba(236, 241, 250, 0.9) 1.5px, rgba(140, 152, 175, 0.38) 1.5px, rgba(60, 68, 84, 0.3) 20%, rgba(255, 255, 255, 0) 46%),
+                linear-gradient(to bottom, rgba(190, 200, 218, 0.35) 0, rgba(190, 200, 218, 0.35) 1px, rgba(190, 200, 218, 0) 1px),
+                linear-gradient(to bottom, #1b1e26, #0d0f14 48%, #171a21);
+        }
+
+        .face.c-bottom {
+            transform: rotateX(-90deg) translateZ(calc(var(--cw) / 2));
+            background:
+                linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.5)),
+                linear-gradient(to bottom, rgba(236, 241, 250, 0.9) 0, rgba(236, 241, 250, 0.9) 1.5px, rgba(140, 152, 175, 0.38) 1.5px, rgba(60, 68, 84, 0.3) 20%, rgba(255, 255, 255, 0) 46%),
+                linear-gradient(to top, rgba(190, 200, 218, 0.35) 0, rgba(190, 200, 218, 0.35) 1px, rgba(190, 200, 218, 0) 1px),
+                linear-gradient(to bottom, #1b1e26, #0d0f14 48%, #171a21);
+        }
+
+        /* Значок «аудио»: жёлтые наушники без заливки в пустом нижнем правом углу футляра.
+           Размер считается от размера футляра, поэтому не заходит на буквы */
+        .audio-badge {
+            position: absolute;
+            right: calc(var(--cw) * 0.05);
+            bottom: calc(var(--cw) * 0.05);
+            transform: translateZ(calc(var(--cd) / 2 + 2px));
+            display: grid;
+            place-items: center;
+            width: calc(var(--cw) * 0.14);
+            height: calc(var(--cw) * 0.14);
+            color: var(--gold-light);
+        }
+
+        .audio-badge .ico {
+            width: 100%;
+            height: 100%;
+            stroke-width: 2.2;
+        }
+
+        .soon-pill {
+            position: absolute;
+            left: 50%;
+            top: calc(100% + 12px);
+            transform: translateX(-50%) translateZ(calc(var(--cd) / 2));
+            padding: 8px 13px 5px;
+            font-family: var(--display);
+            font-size: 0.95rem;
+            line-height: 1;
+            letter-spacing: 0.16em;
+            white-space: nowrap;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            background: var(--surface);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 999px;
+        }
+
+        /* Размеры сцены в этом варианте */
+        .hero-visual {
+            --bw: clamp(190px, min(24vw, 34vh), 300px);
+            --bh: calc(var(--bw) * 1.419);
+            --bd: calc(var(--bw) * 0.13);
+            padding: 6px 0 64px;
+        }
+
+        .soon-pill {
+            font-family: var(--mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.08em;
+            padding: 7px 12px;
+        }
+
+        /* Книга матовая: на обложке лёгкий рассеянный свет без пятна. Футляр без матовой дымки (она делала обложку блёклой):
+           яркая обложка, кромки пластика как в основной странице и один тонкий едва заметный блик */
+        .face.front::after {
+            background:
+                linear-gradient(to right, rgba(0, 0, 0, 0.36) 0, rgba(0, 0, 0, 0) 2.5%, rgba(255, 255, 255, 0.05) 5.5%, rgba(255, 255, 255, 0) 13%),
+                linear-gradient(125deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 45%, rgba(0, 0, 0, 0.08));
+        }
+
+        .gloss {
+            background: linear-gradient(105deg, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 0.14) 44%, rgba(255, 255, 255, 0) 48%);
+            transform: translateX(calc(var(--cx, 0) * -12%));
+        }
+
+        /* ---------- ПРОБЛЕМА (кремовая) ---------- */
+        .chart-card {
+            max-width: 900px;
+            margin: 0 auto 16px;
+            padding: 28px 32px 22px;
+            border: 1px solid var(--ash);
+            border-radius: 16px;
+            transition: border-color 0.6s ease;
+        }
+
+        .chart-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px 24px;
+            margin-bottom: 12px;
+        }
+
+        .chart-title {
+            color: var(--smoke-on-light);
+        }
+
+        .legend {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+            font-size: 0.8125rem;
+            line-height: 1.4;
+            color: var(--smoke-on-light);
+        }
+
+        .legend i {
+            display: inline-block;
+            width: 22px;
+            height: 3px;
+            margin-right: 8px;
+            border-radius: 2px;
+            vertical-align: middle;
+            background: var(--gold-on-light);
+        }
+
+        .legend li+li i {
+            background: rgba(13, 13, 12, 0.55);
+        }
+
+        .chart {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        .chart .grid line {
+            stroke: var(--ash);
+            stroke-width: 1;
+        }
+
+        .chart .axis {
+            stroke: rgba(13, 13, 12, 0.35);
+            stroke-width: 1.5;
+        }
+
+        .chart .area {
+            fill: var(--gold-on-light);
+            fill-opacity: 0.14;
+        }
+
+        .chart .l-income {
+            stroke: var(--gold-on-light);
+            stroke-width: 4;
+        }
+
+        .chart .l-capital {
+            stroke: rgba(13, 13, 12, 0.55);
+            stroke-width: 3.5;
+        }
+
+        .chart .dot-income {
+            fill: var(--gold-on-light);
+        }
+
+        .chart .dot-capital {
+            fill: rgba(13, 13, 12, 0.55);
+        }
+
+        .chart .qline {
+            stroke: var(--ink);
+            stroke-width: 1.5;
+            stroke-dasharray: 4 6;
+            opacity: 0.7;
+        }
+
+        .chart .qbubble {
+            fill: var(--bone);
+            stroke: var(--ink);
+            stroke-width: 1.6;
+        }
+
+        .chart text {
+            fill: var(--ink);
+            font-family: var(--display);
             font-weight: 700;
-            text-align: center;
-            margin-bottom: 60px;
-            line-height: 1.1;
         }
 
-        .pas-grid {
+        .chart-axis {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 6.25%;
+            font-size: 0.75rem;
+            color: var(--smoke-on-light);
+        }
+
+        .chart-note {
+            margin-top: 14px;
+            font-size: 0.75rem;
+            color: var(--smoke-on-light);
+            text-align: center;
+        }
+
+        .js .chart-card .line {
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+            transition: stroke-dashoffset 1.8s cubic-bezier(0.4, 0.1, 0.2, 1) 0.3s;
+        }
+
+        .js .chart-card .fade {
+            opacity: 0;
+            transition: opacity 0.9s ease 1.7s;
+        }
+
+        .js .chart-card.in-view .line {
+            stroke-dashoffset: 0;
+        }
+
+        .js .chart-card.in-view .fade {
+            opacity: 1;
+        }
+
+        .grid3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .pas-card h3 {
-            font-size: var(--step-4);
-            color: var(--gold-primary);
-            margin-bottom: 16px;
-            letter-spacing: 0.03em;
-        }
-
-        /* FEATURES */
-        .features-grid {
+        .grid2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px 80px;
+            gap: 16px;
         }
 
-        .feature-item {
-            display: flex; gap: 24px;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-item:hover { transform: translateX(10px); }
-
-        .feature-icon {
-            color: var(--gold-primary);
-            font-size: 1.8rem;
-            opacity: 0.8;
-            transition: opacity 0.3s, transform 0.3s;
+        /* Карточки: тонкая рамка; при наведении плавно приподнимаются, рамка теплеет, проступает золотистый свет.
+           Так же, как в основной странице: наведение ловит неподвижная обёртка .lift, а поднимается вложенная карточка,
+           поэтому курсор у нижней кромки не «выпадает» из области и карточка не дрожит */
+        .lift {
+            display: flex;
         }
 
-        .feature-item:hover .feature-icon {
-            opacity: 1;
-            transform: scale(1.2) rotate(15deg);
+        .lift>.cardx,
+        .lift>.format {
+            flex: 1;
+            min-width: 0;
         }
 
-        .feature-text h4 {
-            font-size: var(--step-1);
+        .cardx {
+            position: relative;
+            padding: 28px 28px 32px;
+            border: 1px solid var(--ash);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: translate 0.7s var(--ease-soft), border-color 0.6s ease, box-shadow 0.7s ease;
+        }
+
+        .cardx::before,
+        .format::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .cardx>*,
+        .format>* {
+            position: relative;
+        }
+
+        .cardx .idx {
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .cardx h3 {
+            margin-bottom: 10px;
+            font-family: var(--display);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .dark .cardx h3 {
+            color: var(--gold);
+        }
+
+        .light .cardx h3 {
+            color: var(--gold-on-light);
+        }
+
+        .light .cardx .idx {
+            color: var(--smoke-on-light);
+        }
+
+        .light .cardx p {
+            color: var(--text-on-light);
+        }
+
+        .dark .cardx {
+            border-color: var(--graphite);
+            background: var(--charcoal);
+        }
+
+        .dark .cardx .idx {
+            color: var(--smoke);
+        }
+
+        .dark .cardx p {
+            color: rgba(239, 236, 230, 0.72);
+        }
+
+        @media (hover: hover) {
+            .lift:hover>.cardx,
+            .lift:hover>.format {
+                translate: 0 -4px;
+            }
+
+            .lift:hover>.cardx::before,
+            .lift:hover>.format::before {
+                opacity: 1;
+            }
+
+            .light .lift:hover>.cardx {
+                border-color: rgba(138, 109, 18, 0.55);
+                box-shadow: 0 16px 36px rgba(13, 13, 12, 0.12);
+            }
+
+            .dark .lift:hover>.cardx {
+                border-color: rgba(212, 175, 55, 0.4);
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+            }
+
+            .lift:hover>.format {
+                border-color: rgba(212, 175, 55, 0.4);
+                box-shadow: 0 16px 36px rgba(13, 13, 12, 0.28);
+            }
+
+            .light .chart-card:hover {
+                border-color: rgba(138, 109, 18, 0.4);
+            }
+        }
+
+        /* ---------- ФОРМАТЫ (кремовая секция, тёмные «витрины» с обложками) ---------- */
+        .formats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .format {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 32px 32px 36px;
+            border: 1px solid var(--graphite);
+            border-radius: 16px;
+            background: var(--charcoal);
+            color: var(--bone);
+            text-align: center;
+            overflow: hidden;
+            transition: translate 0.7s var(--ease-soft), border-color 0.6s ease, box-shadow 0.7s ease;
+        }
+
+        .format-media {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 290px;
+            margin-bottom: 24px;
+        }
+
+        /* Золотое свечение за обложкой, как в основной странице */
+        .format-media::before {
+            content: "";
+            position: absolute;
+            inset: 4% 10%;
+            background: radial-gradient(closest-side, rgba(212, 175, 55, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .format .mono {
+            margin-bottom: 10px;
+            color: var(--smoke);
+        }
+
+        .format h3 {
             margin-bottom: 12px;
-            letter-spacing: 0.03em;
+            font-family: var(--display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
-        .feature-text p { color: var(--text-muted); }
+        .format p {
+            max-width: 380px;
+            margin-bottom: 12px;
+            color: rgba(239, 236, 230, 0.72);
+        }
 
+        .format .fmeta {
+            margin-bottom: 24px;
+            color: var(--smoke);
+        }
 
+        .format .btn {
+            width: 100%;
+            max-width: 320px;
+            margin-top: auto;
+        }
 
-        /* QUOTE */
-        .quote-block {
-            background: linear-gradient(180deg, transparent, rgba(6, 8, 14, 0.8), transparent);
+        /* В витринах те же объёмные книга и футляр: спокойно парят (пауза вне экрана)
+           и поворачиваются к курсору или пальцу, каждый сам по себе */
+        .format-cover {
+            position: relative;
+            perspective: 1000px;
+            animation: cover-float 6.5s ease-in-out infinite alternate;
+        }
+
+        .format-cover.is-paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes cover-float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        .format-cover.is-book {
+            --bw: 168px;
+            --bh: calc(var(--bw) * 1.419);
+            --bd: calc(var(--bw) * 0.13);
+            width: var(--bw);
+            height: var(--bh);
+        }
+
+        .format-cover.is-audio {
+            --cw: 200px;
+            --cd: calc(var(--cw) * 0.09);
+            width: var(--cw);
+            height: var(--cw);
+        }
+
+        .format-cover.is-audio {
+            animation-duration: 5.5s;
+            animation-delay: -2.5s;
+        }
+
+        .format-cover .book,
+        .format-cover .case {
+            animation: none;
+            transition: transform 0.6s var(--ease-soft);
+        }
+
+        .format-cover .book {
+            transform: rotateY(calc(-24deg + var(--bx, 0) * 22deg)) rotateX(calc(4deg + var(--by, 0) * -12deg));
+        }
+
+        .format-cover .case {
+            inset: auto;
+            transform: rotateY(calc(-30deg + var(--cx, 0) * 22deg)) rotateX(calc(4deg + var(--cy, 0) * -12deg));
+        }
+
+        /* ---------- ФИНАЛ (чёрная): мысль и призыв ---------- */
+        .quote {
+            max-width: 1000px;
+            font-size: clamp(2.5rem, 5.4vw, 4.875rem);
+            line-height: 1.08;
+        }
+
+        .cta-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            padding-top: clamp(40px, 6vw, 72px);
+            border-top: 1px solid var(--graphite);
             text-align: center;
         }
 
-        .quote-text {
-            font-size: var(--step-3);
-            font-weight: 300;
-            max-width: 900px;
-            margin: 0 auto;
+        .cta-lead {
+            font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+            line-height: 1.4;
+            letter-spacing: -0.012em;
+        }
+
+        .cta-text {
+            color: rgba(239, 236, 230, 0.72);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        /* ---------- Подвал и закреплённая панель ---------- */
+        .foot {
+            padding: 40px 0 calc(40px + var(--bar-h));
+            background: var(--carbon);
+            border-top: 1px solid var(--graphite);
+            text-align: center;
+        }
+
+        .foot p {
+            font-size: 0.8125rem;
             line-height: 1.6;
-            font-style: italic;
-            color: #fff;
+            color: var(--smoke);
         }
 
-        /* FINAL CTA */
-        .final-cta { text-align: center; position: relative; }
-        .final-cta-bg {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 80%; height: 80%; background: var(--gold-primary);
-            filter: blur(150px); opacity: 0.05; z-index: 0; pointer-events: none;
-        }
-        .final-cta .container { position: relative; z-index: 1; }
-        .final-cta p { max-width: 700px; margin: 0 auto 48px; font-size: var(--step-1); }
-
-        .store-links {
-            display: flex; justify-content: center; gap: 30px;
-            margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);
+        .foot p+p {
+            margin-top: 6px;
         }
 
-        .store-logo {
-            color: var(--text-muted); text-decoration: none; font-weight: 500;
-            display: flex; align-items: center; gap: 8px;
-            padding: 10px 20px; border-radius: 6px; border: 1px solid transparent;
-            transition: all 0.3s ease;
+        /* Ссылка на автора тем же шрифтом и цветом, что вся строка; подчёркивание только при наведении */
+        .foot a {
+            color: inherit;
+            text-decoration: none;
+            text-underline-offset: 3px;
         }
 
-        .store-logo:hover {
-            color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.05);
-            border-color: rgba(212, 175, 55, 0.2);
+        .foot a:hover {
+            text-decoration: underline;
         }
 
-        footer { padding: 40px 0; text-align: center; background: #010203; }
-        footer p { font-size: var(--step--1); color: #4a5568; }
+        .bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 60;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: var(--bar-h);
+            padding: 0 max(16px, calc((100vw - 1200px) / 2 + 24px));
+            background: var(--carbon);
+            border-top: 1px solid var(--graphite);
+            transition: transform 0.4s var(--ease-soft), visibility 0s linear 0s;
+        }
+
+        .bar.is-hidden {
+            transform: translateY(100%);
+            visibility: hidden;
+            transition: transform 0.4s var(--ease-soft), visibility 0s linear 0.4s;
+        }
+
+        .bar-title {
+            margin-right: auto;
+            color: var(--smoke);
+        }
+
+        .bar .btn {
+            min-height: 40px;
+            padding: 11px 18px 7px;
+            font-size: 1.25rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .book,
+            .case,
+            .format-cover {
+                animation: none !important;
+            }
+
+            .js .chart-card .line,
+            .js .chart-card .fade,
+            .stage,
+            .case-rig,
+            .gloss,
+            .bar,
+            .btn,
+            .cardx,
+            .format,
+            .cardx::before,
+            .format::before,
+            .format-cover .book,
+            .format-cover .case {
+                transition: none;
+            }
+
+            .btn-gold::before {
+                animation: none !important;
+            }
+
+            .lift:hover>.cardx,
+            .lift:hover>.format {
+                translate: none;
+            }
+
+            .btn-gold:hover,
+            .btn-bone:hover {
+                transform: none;
+            }
+
+            .js .reveal {
+                opacity: 1;
+                animation: none !important;
+            }
+
+            .js .chart-card .line {
+                stroke-dashoffset: 0;
+            }
+
+            .js .chart-card .fade {
+                opacity: 1;
+            }
+        }
 
         @media (max-width: 900px) {
-            /* Мобильная типографика: используем clamp() и vw, чтобы шрифты динамически сжимались на самых узких экранах (iPhone SE и т.д.) */
-            :root {
-                --step--1: clamp(0.8rem, 3.5vw, 0.875rem); /* от 12.8px до 14px */
-                --step-0: clamp(0.9rem, 4vw, 1rem); /* от 14.4px до 16px */
-                --step-1: clamp(1rem, 4.5vw, 1.125rem); /* от 16px до 18px */
-                --step-2: clamp(1.125rem, 5vw, 1.25rem); /* от 18px до 20px */
-                --step-3: clamp(1.25rem, 6vw, 1.5rem); /* от 20px до 24px */
-                --step-4: clamp(1.4rem, 7vw, 1.75rem); /* от 22.4px до 28px */
-                --step-5: clamp(1.75rem, 8.5vw, 2.25rem); /* от 28px до 36px */
-                --step-6: clamp(2rem, 10vw, 2.75rem); /* от 32px до 44px */
+            .hero-visual {
+                --bw: clamp(168px, 46vw, 230px);
             }
-            section { padding: 60px 0; }
-            .section-title { margin-bottom: 40px; }
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 80px; padding-bottom: 40px; }
-            /* Центрируем и ограничиваем все элементы героя до 85% ширины экрана, чтобы они были на одной линии */
-            .hero-content > div:first-child { width: 85% !important; margin: 0 auto 32px !important; }
-            .hero-subtitle { width: 85%; margin: 0 auto 32px; text-align: center; }
-            
-            /* Кнопки: гибкие, с правильным отступом и защитой от переполнения */
-            .hero-buttons { flex-direction: column; width: 85%; max-width: 85%; gap: 16px; margin: 0 auto; }
-            .hero-buttons a { width: 100%; text-align: center; white-space: normal; word-wrap: break-word; font-size: 1.125rem; }
-            .hero-buttons .shimmer-btn { padding: 18px 20px 12px !important; }
-            .hero-buttons .outline-btn { padding: 16px 20px 10px !important; }
-            
-            /* Уменьшаем 3D-книгу, чтобы она гарантированно влезала в старые экраны (iPhone SE, 320px) */
-            .hero-visual { transform: scale(0.85); margin-top: -20px; }
 
-            .pas-grid { gap: 24px; }
-            .features-grid { gap: 32px; }
-            .pas-grid, .features-grid { grid-template-columns: 1fr; }
-            .quote-block { padding: 40px 20px; margin: 30px auto; }
-            .store-links { flex-direction: column; gap: 16px; margin-top: 40px; padding-top: 30px; }
-            .store-logo { width: 100%; justify-content: center; max-width: 300px; margin: 0 auto; }
+            .hero {
+                padding-top: 44px;
+            }
+
+            .hero-grid {
+                grid-template-columns: minmax(0, 1fr);
+                justify-items: center;
+            }
+
+            .hero-block {
+                min-width: 0;
+                max-width: 560px;
+            }
+
+            .grid3,
+            .grid2,
+            .formats {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .formats {
+                max-width: 460px;
+            }
+
+            .sub {
+                font-size: 1.125rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .bar {
+                gap: 8px;
+                padding: 0 12px;
+            }
+
+            .bar-title {
+                display: none;
+            }
+
+            .bar .btn {
+                flex: 1;
+            }
+
+            /* На телефоне кнопки первого экрана встают друг под друга, каждая на всю ширину блока */
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero-buttons .btn {
+                flex: none;
+                width: 100%;
+            }
+
+            .format {
+                padding: 28px 20px 30px;
+            }
+
+            .chart-card {
+                padding: 22px 16px 18px;
+            }
+        }
+
+        /* Самые узкие телефоны (320–400 px): кнопки и карточки не шире экрана, текст кнопки может перенестись */
+        @media (max-width: 400px) {
+            .btn {
+                padding-left: 16px;
+                padding-right: 16px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .format {
+                padding: 28px 18px 30px;
+            }
+
+            /* В узкой колонке без переносов слов выравнивание по ширине растягивает пробелы, поэтому здесь по центру и по левому краю */
+            .sub {
+                text-align: center;
+            }
+
+            .hero-sub {
+                text-align: left;
+            }
+
+            /* Нижняя панель на самых узких экранах: кнопки остаются в одну строку, поэтому чуть мельче */
+            .bar .btn {
+                white-space: nowrap;
+                padding: 11px 8px 7px;
+                font-size: 1.0625rem;
+            }
         }
     </style>
 </head>
+
 <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-headphones" viewBox="0 0 24 24">
+            <path d="M4 15v-3a8 8 0 0 1 16 0v3" />
+            <rect x="3" y="14" width="4.5" height="7" rx="1.6" />
+            <rect x="16.5" y="14" width="4.5" height="7" rx="1.6" />
+        </symbol>
+    </svg>
 
-    <div class="aurora-bg"></div>
+    <main id="main">
 
-    <!-- HERO SECTION -->
-    <header class="hero container">
-        <div class="hero-content">
-            <div class="blur-fade" style="width: 100%; margin-bottom: 32px;">
-                <svg viewBox="0 0 1000 520" width="100%" style="font-family: 'Bebas Custom', 'Montserrat', sans-serif; font-weight: 900; overflow: visible;">
-                    <defs>
-                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#c59b27" />
-                            <stop offset="50%" stop-color="#f9d776" />
-                            <stop offset="100%" stop-color="#c59b27" />
-                        </linearGradient>
-                        <filter id="volumetric" x="-10%" y="-10%" width="120%" height="120%">
-                            <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000" flood-opacity="0.9"/>
-                            <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#fff" flood-opacity="0.2"/>
-                        </filter>
-                        <filter id="volumetricGold" x="-10%" y="-10%" width="120%" height="120%">
-                            <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="1"/>
-                            <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#d4af37" flood-opacity="0.5"/>
-                        </filter>
-                    </defs>
-                    
-                    <!-- Масштабируем высоту букв (вытянутость) -->
-                    <g transform="scale(1, 1.15)">
-                        <!-- Максимально жирный шрифт: размер 230 + обводка 3px -->
-                        <text x="45 196.6 348.3 500 651.6 803.3 955" y="175" font-size="230" font-weight="900" stroke="#fff" stroke-width="3" text-anchor="middle" fill="#fff" filter="url(#volumetric)">КАПИТАЛ</text>
-                        <text x="45 196.6 348.3 500 651.6 803.3 955" y="365" font-size="230" font-weight="900" stroke="url(#goldGradient)" stroke-width="3" text-anchor="middle" fill="url(#goldGradient)" filter="url(#volumetricGold)">ВОПРЕКИ</text>
-                    </g>
-                    
-                    <!-- Подзаголовок опущен вниз на ~10px относительно прежнего отступа, y=495 -->
-                    <text x="500" y="495" font-size="52" font-weight="900" stroke="#dcdcdc" stroke-width="1" textLength="990" lengthAdjust="spacing" text-anchor="middle" fill="#dcdcdc" filter="url(#volumetric)">ИНВЕСТИЦИИ В УСЛОВИЯХ ШТОРМА</text>
-                </svg>
+        <!-- ГЕРОЙ -->
+        <section class="sec dark hero" aria-label="Капитал Вопреки">
+            <div class="container hero-grid">
+                <div class="hero-block">
+                    <span class="eyebrow">Андрей Полющенко</span>
+<h1 class="hero-title">
+                    <span class="visually-hidden">Капитал Вопреки. Инвестиции в&nbsp;условиях шторма</span>
+                    <svg viewBox="0 0 1000 520" aria-hidden="true" focusable="false"
+                        style="font-family: 'Bebas Custom', 'Arial Narrow', Impact, sans-serif; font-weight: 900; overflow: visible;">
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#c59b27" />
+                                <stop offset="50%" stop-color="#f9d776" />
+                                <stop offset="100%" stop-color="#c59b27" />
+                            </lineargradient>
+                            <filter id="volumetric" x="-10%" y="-10%" width="120%" height="120%">
+                                <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000" flood-opacity="0.9" />
+                                <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#fff" flood-opacity="0.2" />
+                            </filter>
+                            <filter id="volumetricGold" x="-10%" y="-10%" width="120%" height="120%">
+                                <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="1" />
+                                <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="#d4af37" flood-opacity="0.5" />
+                            </filter>
+                        </defs>
+
+                        <!-- Каждая буква стоит в своей «ячейке», поэтому КАПИТАЛ и ВОПРЕКИ ровно одной ширины -->
+                        <g transform="scale(1, 1.15)">
+                            <text x="45 196.6 348.3 500 651.6 803.3 955" y="175" font-size="230" font-weight="900"
+                                stroke="#fff" stroke-width="3" text-anchor="middle" fill="#fff"
+                                filter="url(#volumetric)">КАПИТАЛ</text>
+                            <text x="45 196.6 348.3 500 651.6 803.3 955" y="365" font-size="230" font-weight="900"
+                                stroke="url(#goldGradient)" stroke-width="3" text-anchor="middle"
+                                fill="url(#goldGradient)" filter="url(#volumetricGold)">ВОПРЕКИ</text>
+                        </g>
+
+                        <text x="500" y="495" font-size="52" font-weight="900" stroke="#dcdcdc" stroke-width="1"
+                            textLength="990" lengthAdjust="spacing" text-anchor="middle" fill="#dcdcdc"
+                            filter="url(#volumetric)">ИНВЕСТИЦИИ В УСЛОВИЯХ ШТОРМА</text>
+                    </svg>
+                </h1>
+                    <p class="hero-sub reveal d1">Узнайте, почему главный враг вашего капитала сидит не&nbsp;на&nbsp;бирже, а&nbsp;в&nbsp;вашей собственной голове.</p>
+                    <div class="hero-buttons reveal d2" id="heroButtons">
+                        <!-- ВРЕМЕННО СКРЫТО ИЗ-ЗА ЦЕНЫ
+                        <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="btn btn-gold">Купить на Ozon</a>
+                        -->
+                        <a class="btn btn-gold"
+                            href="https://www.litres.ru/73949334/"
+                            target="_blank" rel="noopener">Читать на&nbsp;ЛитРес</a>
+                        <a class="btn btn-ghost is-soon" data-audio aria-disabled="true">
+                            <span class="when-soon">Аудиокнига скоро</span>
+                            <span class="when-live">Слушать на&nbsp;ЛитРес</span>
+                        </a>
+                    </div>
+                    <!-- Данные ЛитРес на 18.11.2026; если рядом лежит litres.json, оценка и возраст подставятся из него -->
+                    <p class="mono hero-meta reveal d3">
+                        <span>Рейтинг <span data-litres="rating">4,9</span> на&nbsp;ЛитРес</span>
+                        <span data-litres="age">16+</span>
+                    </p>
+                </div>
+<div class="hero-visual reveal d3" id="heroVisual">
+                <div class="book-glow" aria-hidden="true"></div>
+                <div class="stack">
+                    <div class="stage" id="stage">
+                    <div class="book" id="book3d">
+                        <div class="face front">
+                            <picture><source type="image/avif" srcset="img/book-360.avif 360w, img/book-600.avif 600w" sizes="(max-width: 900px) 46vw, 300px"><img src="img/book-600.webp" srcset="img/book-360.webp 360w, img/book-600.webp 600w" sizes="(max-width: 900px) 46vw, 300px"
+                                   
+                                    width="600" height="851"
+                                    alt="Обложка электронной книги «Капитал Вопреки. Инвестиции в условиях шторма», автор Андрей Полющенко"
+                                    fetchpriority="high" decoding="async"></picture>
+                        </div>
+                        <div class="face back" aria-hidden="true"></div>
+                        <div class="face spine" aria-hidden="true"></div>
+                        <div class="face pages" aria-hidden="true"></div>
+                        <div class="face top" aria-hidden="true"></div>
+                        <div class="face bottom" aria-hidden="true"></div>
+                    </div>
+                    </div>
+                    <div class="case-rig">
+                    <div class="case">
+                        <div class="face c-front">
+                            <picture><source type="image/avif" srcset="img/audio-360.avif 360w, img/audio-600.avif 600w" sizes="(max-width: 900px) 30vw, 180px"><img src="img/audio-600.webp" srcset="img/audio-360.webp 360w, img/audio-600.webp 600w" sizes="(max-width: 900px) 30vw, 180px"
+                                   
+                                    width="600" height="600"
+                                    alt="Обложка аудиокниги «Капитал Вопреки. Инвестиции в условиях шторма»"
+                                    decoding="async"></picture>
+                            <span class="gloss" aria-hidden="true"></span>
+                        </div>
+                        <div class="face c-back" aria-hidden="true"></div>
+                        <div class="face c-left" aria-hidden="true"></div>
+                        <div class="face c-right" aria-hidden="true"></div>
+                        <div class="face c-top" aria-hidden="true"></div>
+                        <div class="face c-bottom" aria-hidden="true"></div>
+                        <span class="audio-badge" aria-hidden="true"><svg class="ico"><use href="#i-headphones" /></svg></span>
+                        <span class="soon-pill when-soon">Скоро</span>
+                    </div>
+                    </div>
+                </div>
             </div>
-            <p class="hero-subtitle blur-fade delay-100">
-                Узнайте, почему главный враг вашего капитала сидит не на бирже, а в вашей собственной голове.
-            </p>
-            
-            <div class="hero-buttons blur-fade delay-200">
-                <!-- ВРЕМЕННО СКРЫТО ИЗ-ЗА ЦЕНЫ 
-                <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn">Купить на Ozon</a>
-                -->
-                <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="shimmer-btn">Читать на ЛитРес</a>
             </div>
-        </div>
+        </section>
 
-        <div class="hero-visual blur-fade delay-300">
-            <div class="book-glow"></div>
-            <div class="book idle" id="book3d">
-                <div class="book-front"></div>
-                <div class="book-spine"></div>
-                <div class="book-pages"></div>
-                <div class="book-back"></div>
+        <!-- ПРОБЛЕМА -->
+        <section class="sec light" id="problem">
+            <div class="container">
+                <div class="head reveal">
+                    <span class="eyebrow">Проблема</span>
+                    <h2 class="display">Почему ваши доходы растут, <span class="accent">а&nbsp;капитал&nbsp;— нет</span></h2>
+                    <p class="sub">Вы зарабатываете больше, чем пять лет назад, но&nbsp;капитал стоит на&nbsp;месте.</p>
+                </div>
+
+                <div class="chart-card reveal" role="group" aria-labelledby="chartTitle">
+                    <div class="chart-head">
+                        <p class="mono chart-title" id="chartTitle">Так выглядит иллюзия роста</p>
+                        <ul class="legend">
+                            <li><i></i>Доходы</li>
+                            <li><i></i>Капитал</li>
+                        </ul>
+                    </div>
+                    <svg class="chart" viewBox="0 0 800 340" role="img"
+                        aria-label="Схема: доходы за пять лет растут, а капитал колеблется на одном уровне. Между линиями остаётся разрыв с вопросом: куда уходит разница?">
+                        <g class="grid">
+                            <line x1="50" y1="87" x2="750" y2="87" />
+                            <line x1="50" y1="162" x2="750" y2="162" />
+                            <line x1="50" y1="237" x2="750" y2="237" />
+                        </g>
+                        <line class="axis" x1="50" y1="312" x2="750" y2="312" />
+                        <path class="area fade" d="M50.0 254.0 C61.7 252.7 96.7 250.3 120.0 246.0 C143.3 241.7 166.7 233.0 190.0 228.0 C213.3 223.0 236.7 222.0 260.0 216.0 C283.3 210.0 306.7 198.3 330.0 192.0 C353.3 185.7 376.7 184.7 400.0 178.0 C423.3 171.3 446.7 159.3 470.0 152.0 C493.3 144.7 516.7 141.0 540.0 134.0 C563.3 127.0 586.7 117.7 610.0 110.0 C633.3 102.3 656.7 96.0 680.0 88.0 C703.3 80.0 738.3 66.3 750.0 62.0 L750.0 272.0 C738.3 273.3 703.3 280.7 680.0 280.0 C656.7 279.3 633.3 267.0 610.0 268.0 C586.7 269.0 563.3 285.3 540.0 286.0 C516.7 286.7 493.3 275.7 470.0 272.0 C446.7 268.3 423.3 262.3 400.0 264.0 C376.7 265.7 353.3 281.3 330.0 282.0 C306.7 282.7 283.3 272.7 260.0 268.0 C236.7 263.3 213.3 253.3 190.0 254.0 C166.7 254.7 143.3 270.7 120.0 272.0 C96.7 273.3 61.7 263.7 50.0 262.0 Z" />
+                        <path class="line l-capital" pathLength="1" fill="none" stroke-linecap="round" d="M50.0 262.0 C61.7 263.7 96.7 273.3 120.0 272.0 C143.3 270.7 166.7 254.7 190.0 254.0 C213.3 253.3 236.7 263.3 260.0 268.0 C283.3 272.7 306.7 282.7 330.0 282.0 C353.3 281.3 376.7 265.7 400.0 264.0 C423.3 262.3 446.7 268.3 470.0 272.0 C493.3 275.7 516.7 286.7 540.0 286.0 C563.3 285.3 586.7 269.0 610.0 268.0 C633.3 267.0 656.7 279.3 680.0 280.0 C703.3 280.7 738.3 273.3 750.0 272.0" />
+                        <path class="line l-income" pathLength="1" fill="none" stroke-linecap="round" d="M50.0 254.0 C61.7 252.7 96.7 250.3 120.0 246.0 C143.3 241.7 166.7 233.0 190.0 228.0 C213.3 223.0 236.7 222.0 260.0 216.0 C283.3 210.0 306.7 198.3 330.0 192.0 C353.3 185.7 376.7 184.7 400.0 178.0 C423.3 171.3 446.7 159.3 470.0 152.0 C493.3 144.7 516.7 141.0 540.0 134.0 C563.3 127.0 586.7 117.7 610.0 110.0 C633.3 102.3 656.7 96.0 680.0 88.0 C703.3 80.0 738.3 66.3 750.0 62.0" />
+                        <g class="fade">
+                            <circle class="dot-income" cx="750" cy="62" r="7" />
+                            <circle class="dot-capital" cx="750" cy="272" r="6" />
+                            <line class="qline" x1="610" y1="122" x2="610" y2="256" />
+                            <circle class="qbubble" cx="610" cy="189" r="18" />
+                            <text x="610" y="198" text-anchor="middle" font-size="26">?</text>
+                        </g>
+                    </svg>
+                    <div class="chart-axis" aria-hidden="true">
+                        <span>5&nbsp;лет назад</span>
+                        <span>сегодня</span>
+                    </div>
+                    <p class="chart-note">Схема-иллюстрация, а&nbsp;не&nbsp;данные конкретного человека или рынка.</p>
+                </div>
+
+                <div class="grid3">
+                    <div class="lift reveal d1">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">01</span>
+                            <h3>Иллюзия роста</h3>
+                            <p><span class="s">Вы зарабатываете больше, чем пять лет назад, но&nbsp;капитал стоит на&nbsp;месте.</span> <span class="s">Куда исчезает разница между вашим доходом и&nbsp;реальным&nbsp;богатством?</span></p>
+                        </div>
+                    </div>
+                    <div class="lift reveal d2">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">02</span>
+                            <h3>Внутренний враг</h3>
+                            <p><span class="s">В&nbsp;вашей голове идет непрерывная война за&nbsp;право распоряжаться счетами.</span> <span class="s">Почему интеллект чаще всего проигрывает&nbsp;биологии?</span></p>
+                        </div>
+                    </div>
+                    <div class="lift reveal d3">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">03</span>
+                            <h3>Системная ошибка</h3>
+                            <p><span class="s">Инфраструктура важнее рыночных прогнозов.</span> <span class="s">Непонимание архитектуры налогов заставляет вас отдавать капитал системе даже при&nbsp;растущем&nbsp;рынке.</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- PAS FRAMEWORK -->
-    <section>
+        <!-- ЧТО ВНУТРИ -->
+        <section class="sec dark">
+            <div class="container">
+                <div class="head reveal">
+                    <span class="eyebrow">Внутри книги</span>
+                    <h2 class="display">Архитектура портфеля: <span class="accent">от&nbsp;иллюзий к&nbsp;математике</span></h2>
+                    <p class="sub"><span class="s">Практическое руководство для&nbsp;тех, кто хочет начать инвестировать, но&nbsp;не&nbsp;знает как.</span> <span class="s">Без&nbsp;мотивационных речей и&nbsp;обещаний&nbsp;— только механика, проверяемая на&nbsp;калькуляторе.</span></p>
+                </div>
+
+                <div class="grid2">
+                    <div class="lift reveal d1">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">01</span>
+                            <h3>Математика потерь</h3>
+                            <p>Жесткий расчет того, почему классические безопасные инструменты гарантируют
+                                обесценивание капитала на&nbsp;длинном&nbsp;горизонте.</p>
+                        </div>
+                    </div>
+                    <div class="lift reveal d2">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">02</span>
+                            <h3>Психология паники</h3>
+                            <p><span class="s">Разбор того, что происходит в&nbsp;мозге в&nbsp;момент кризиса.</span> <span class="s">Как сохранить рассудок и&nbsp;активы, когда все остальные совершают&nbsp;ошибки.</span></p>
+                        </div>
+                    </div>
+                    <div class="lift reveal d1">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">03</span>
+                            <h3>Налоговая оптимизация</h3>
+                            <p><span class="s">Математически выверенная симуляция разных налоговых режимов.</span> <span class="s">Как законно сохранить ту часть прибыли, которую забирает&nbsp;государство.</span></p>
+                        </div>
+                    </div>
+                    <div class="lift reveal d2">
+                        <div class="cardx">
+                            <span class="mono idx" aria-hidden="true">04</span>
+                            <h3>Стратегия изъятия</h3>
+                            <p><span class="s">Высокая дивидендная доходность&nbsp;— не&nbsp;всегда признак надежности.</span> <span class="s">Разбор иллюзий и&nbsp;математика безопасного изъятия&nbsp;капитала.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ФОРМАТЫ -->
+        <section class="sec light" id="formats">
+            <div class="container">
+                <div class="head reveal">
+                    <span class="eyebrow">Форматы</span>
+                    <h2 class="display">Читать <span class="accent">или&nbsp;слушать</span></h2>
+                </div>
+
+                <div class="formats">
+                    <div class="lift reveal d1">
+                        <article class="format">
+                            <div class="format-media">
+                                <div class="format-cover is-book">
+                                    <div class="book">
+                                        <div class="face front">
+                                            <picture><source type="image/avif" srcset="img/book-360.avif 360w, img/book-600.avif 600w" sizes="168px"><img src="img/book-600.webp" srcset="img/book-360.webp 360w, img/book-600.webp 600w" sizes="168px"
+                                                   
+                                                    width="600" height="851" decoding="async"
+                                                    alt="Обложка электронной книги «Капитал Вопреки»"></picture>
+                                        </div>
+                                        <div class="face back" aria-hidden="true"></div>
+                                        <div class="face spine" aria-hidden="true"></div>
+                                        <div class="face pages" aria-hidden="true"></div>
+                                        <div class="face top" aria-hidden="true"></div>
+                                        <div class="face bottom" aria-hidden="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mono">Электронная книга</p>
+                            <h3>Читайте в&nbsp;своём темпе</h3>
+                            <p><span class="s">Полная версия книги.</span> <span class="s">Читайте онлайн или в&nbsp;приложении ЛитРес, а&nbsp;для&nbsp;электронной книги скачивайте файл: epub, fb2, pdf и&nbsp;другие.</span></p>
+                            <p class="mono fmeta" data-litres="age">16+</p>
+                            <a class="btn btn-bone"
+                                href="https://www.litres.ru/73949334/"
+                                target="_blank" rel="noopener">Читать на&nbsp;ЛитРес</a>
+                        </article>
+                    </div>
+
+                    <div class="lift reveal d2">
+                        <article class="format">
+                            <div class="format-media">
+                                <div class="format-cover is-audio">
+                                    <div class="case">
+                                        <div class="face c-front">
+                                            <picture><source type="image/avif" srcset="img/audio-360.avif 360w, img/audio-600.avif 600w" sizes="200px"><img src="img/audio-600.webp" srcset="img/audio-360.webp 360w, img/audio-600.webp 600w" sizes="200px"
+                                                   
+                                                    width="600" height="600" decoding="async"
+                                                    alt="Обложка аудиокниги «Капитал Вопреки»"></picture>
+                                            <span class="gloss" aria-hidden="true"></span>
+                                        </div>
+                                        <div class="face c-back" aria-hidden="true"></div>
+                                        <div class="face c-left" aria-hidden="true"></div>
+                                        <div class="face c-right" aria-hidden="true"></div>
+                                        <div class="face c-top" aria-hidden="true"></div>
+                                        <div class="face c-bottom" aria-hidden="true"></div>
+                                        <span class="audio-badge" aria-hidden="true"><svg class="ico"><use href="#i-headphones" /></svg></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mono">Аудиокнига</p>
+                            <h3>Слушайте, где удобно</h3>
+                            <p>Книга в&nbsp;наушниках: в&nbsp;дороге, за&nbsp;рулём или на&nbsp;прогулке&nbsp;— когда читать
+                                неудобно.</p>
+                            <p class="mono fmeta when-soon">Пока доступна электронная версия</p>
+                            <a class="btn btn-ghost is-soon" data-audio aria-disabled="true">
+                                <span class="when-soon">Скоро на&nbsp;ЛитРес</span>
+                                <span class="when-live">Слушать на&nbsp;ЛитРес</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ГЛАВНАЯ МЫСЛЬ И ПРИЗЫВ -->
+        <section class="sec dark" id="buy">
+            <div class="container">
+                <div class="head reveal">
+                    <span class="eyebrow">Главная мысль</span>
+                    <h2 class="display quote">«Главная угроза вашему капиталу кроется не&nbsp;в&nbsp;рыночных кризисах.<br><span class="accent">Она смотрит на&nbsp;вас из&nbsp;зеркала»</span></h2>
+                </div>
+
+                <div class="cta-block reveal">
+                    <p class="cta-lead"><span class="s">Ваш мозг не&nbsp;создан для&nbsp;богатства.</span> <span class="s">Но&nbsp;вы можете его&nbsp;перехитрить.</span></p>
+                    <p class="cta-text"><span class="s">Эта книга&nbsp;— не&nbsp;обещание быстрого богатства.</span> <span class="s">Это набор прагматичных инструментов для&nbsp;работы с&nbsp;вашим капиталом.</span> <span class="s">Для&nbsp;тех, кому нужна инструкция, а&nbsp;не&nbsp;мечта.</span></p>
+                    <div class="cta-buttons">
+                        <!-- ВРЕМЕННО СКРЫТО ИЗ-ЗА ЦЕНЫ
+                        <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="btn btn-gold">Купить на Ozon</a>
+                        -->
+                        <a class="btn btn-gold"
+                            href="https://www.litres.ru/73949334/"
+                            target="_blank" rel="noopener">Читать на&nbsp;ЛитРес</a>
+                        <a class="btn btn-ghost is-soon" data-audio aria-disabled="true">
+                            <span class="when-soon">Аудиокнига скоро</span>
+                            <span class="when-live">Слушать на&nbsp;ЛитРес</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot" id="footer">
         <div class="container">
-            <h2 class="section-title blur-fade">Почему ваши доходы&nbsp;растут <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">а капитал&nbsp;нет</span></h2>
-            
-            <div class="pas-grid">
-                <div class="glass-card blur-fade delay-100">
-                    <div class="glass-card-content">
-                        <h3 style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 16px; text-transform: uppercase;">Иллюзия роста</h3>
-                        <p>Вы зарабатываете больше, чем пять лет назад, но капитал стоит на месте. Куда исчезает разница между вашим доходом и реальным&nbsp;богатством?</p>
-                    </div>
-                </div>
-                <div class="glass-card blur-fade delay-200">
-                    <div class="glass-card-content">
-                        <h3 style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 16px; text-transform: uppercase;">Внутренний враг</h3>
-                        <p>В вашей голове идет непрерывная война за право распоряжаться счетами. Почему интеллект чаще всего проигрывает&nbsp;биологии?</p>
-                    </div>
-                </div>
-                <div class="glass-card blur-fade delay-300">
-                    <div class="glass-card-content">
-                        <h3 style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 16px; text-transform: uppercase;">Системная ошибка</h3>
-                        <p>Инфраструктура важнее рыночных прогнозов. Непонимание архитектуры налогов заставляет вас отдавать капитал системе даже при растущем&nbsp;рынке.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section>
-        <div class="container">
-            <h2 class="section-title blur-fade">Архитектура портфеля <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">От&nbsp;иллюзий к&nbsp;математике</span></h2>
-            
-            <div class="features-grid">
-                <div class="feature-item blur-fade delay-100">
-                    <div class="feature-icon">✦</div>
-                    <div class="feature-text">
-                        <h4>Математика потерь</h4>
-                        <p>Жесткий расчет того, почему классические безопасные инструменты гарантируют обесценивание капитала на длинном&nbsp;горизонте.</p>
-                    </div>
-                </div>
-                <div class="feature-item blur-fade delay-200">
-                    <div class="feature-icon">✦</div>
-                    <div class="feature-text">
-                        <h4>Психология паники</h4>
-                        <p>Разбор того, что происходит в мозге в момент кризиса. Как сохранить рассудок и активы, когда все остальные совершают&nbsp;ошибки.</p>
-                    </div>
-                </div>
-                <div class="feature-item blur-fade delay-300">
-                    <div class="feature-icon">✦</div>
-                    <div class="feature-text">
-                        <h4>Налоговая оптимизация</h4>
-                        <p>Математически выверенная симуляция разных налоговых режимов. Как законно сохранить ту часть прибыли, которую забирает&nbsp;государство.</p>
-                    </div>
-                </div>
-                <div class="feature-item blur-fade delay-400">
-                    <div class="feature-icon">✦</div>
-                    <div class="feature-text">
-                        <h4>Стратегия изъятия</h4>
-                        <p>Высокая дивидендная доходность — не всегда признак надежности. Разбор иллюзий и математика безопасного изъятия&nbsp;капитала.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUOTE SECTION -->
-    <section class="quote-block">
-        <div class="container">
-            <p class="quote-text blur-fade">
-                <span style="display: block; margin-bottom: 0.25em;">«Главная угроза вашему&nbsp;капиталу</span>
-                <span style="display: block; margin-bottom: 0.25em;">кроется не в рыночных&nbsp;кризисах.</span>
-                <span class="gold-gradient-text" style="display: block;">Она смотрит на вас из&nbsp;зеркала»</span>
-            </p>
-        </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section id="buy" class="final-cta">
-        <div class="final-cta-bg"></div>
-        <div class="container">
-            <h2 class="section-title blur-fade">Ваш мозг не создан для&nbsp;богатства <span class="gold-gradient-text" style="display: block; margin-top: 0.1em;">Но вы можете его&nbsp;перехитрить</span></h2>
-            <p class="blur-fade delay-100"><span style="display: block; margin-bottom: 0.25em;">Эта книга — не обещание быстрого&nbsp;богатства</span><span style="display: block;">Это набор прагматичных инструментов для работы с вашим&nbsp;капиталом</span></p>
-            <div class="hero-buttons blur-fade delay-200" style="justify-content: center; max-width: 600px; margin: 0 auto;">
-                <!-- ВРЕМЕННО СКРЫТО ИЗ-ЗА ЦЕНЫ 
-                <a href="https://www.ozon.ru/product/kapital-vopreki-investitsii-v-usloviyah-shtorma-elektronnaya-kniga-4373110996/?at=OgtEj9xzqhPj8Zg7h0BZ7VQSA3R43ZSVM6EylfOKRWYD" target="_blank" class="shimmer-btn">Купить на Ozon</a>
-                -->
-                <a href="https://www.litres.ru/book/andrey-poluschenko/kapital-vopreki-investicii-v-usloviyah-shtorma-73949334/" target="_blank" class="shimmer-btn">Читать на ЛитРес</a>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2026. Инвестиции связаны с риском. Не является индивидуальной инвестиционной рекомендацией.</p>
+            <p>© 2026. Инвестиции связаны с&nbsp;риском. Не&nbsp;является индивидуальной инвестиционной рекомендацией.</p>
+            <p><span data-litres="age">16+</span> · Автор&nbsp;— <a href="https://www.litres.ru/author/andrey-poluschenko/"
+                    target="_blank" rel="noopener">Андрей Полющенко</a></p>
         </div>
     </footer>
 
-    <!-- SCRIPTS FOR 21st COMPONENTS -->
+    <!-- Закреплённая нижняя панель: единственная золотая кнопка на экране (скрывается, когда виден финальный блок) -->
+    <div class="bar" id="bar">
+        <span class="mono bar-title">Капитал Вопреки · Андрей Полющенко</span>
+        <a class="btn btn-ghost is-soon" data-audio aria-disabled="true">
+            <span class="when-soon">Аудиокнига скоро</span>
+            <span class="when-live">Слушать</span>
+        </a>
+        <a class="btn btn-gold"
+            href="https://www.litres.ru/73949334/"
+            target="_blank" rel="noopener">Читать на&nbsp;ЛитРес</a>
+    </div>
+
     <script>
-        // 1. BLUR FADE LOGIC
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
-            const observer = new IntersectionObserver((entries, observer) => {
+        // ==========================================================
+        // НАСТРОЙКА АУДИОКНИГИ
+        // Когда аудиокнига появится на ЛитРес, вставьте её адрес между кавычками.
+        // Пока пусто — на кнопках будет «Аудиокнига скоро».
+        const AUDIO_URL = '';
+        // ==========================================================
+
+        // 1. Появление блоков при прокрутке
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target);
+                        obs.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+            reveals.forEach(el => revealObserver.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('in-view'));
+        }
 
-            document.querySelectorAll('.blur-fade').forEach(el => observer.observe(el));
+        // 2. Ссылка на аудиокнигу
+        if (AUDIO_URL) {
+            document.documentElement.classList.add('audio-live');
+            document.querySelectorAll('[data-audio]').forEach(a => {
+                a.href = AUDIO_URL;
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.classList.remove('is-soon');
+                a.removeAttribute('aria-disabled');
+            });
+        }
+
+        // 3. Книга и футляр откликаются каждый на свой курсор или палец: навели на книгу — двигается только книга,
+        //    на футляр — только футляр. На телефоне то же при касании. Парение на паузе, когда блок вне экрана
+        const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const follow = (area, pick) => {
+            // area — неподвижный блок, ловит курсор и касания; pick(e) говорит, над каким предметом курсор или палец
+            let frame = 0, timer = 0, cur = null;
+            const queue = new Map();
+            const flush = () => {
+                frame = 0;
+                queue.forEach((v, k) => {
+                    v.el.style.setProperty('--' + k + 'x', v.x.toFixed(3));
+                    v.el.style.setProperty('--' + k + 'y', v.y.toFixed(3));
+                });
+                queue.clear();
+            };
+            const put = (h, x, y) => { queue.set(h.k, { el: h.el, x, y }); if (!frame) frame = requestAnimationFrame(flush); };
+            const release = () => { if (cur) put(cur, 0, 0); cur = null; };
+            const move = e => {
+                const h = pick(e);
+                if (cur && (!h || h.k !== cur.k)) release();
+                if (!h) return;
+                cur = h;
+                const r = h.r;
+                put(h, Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width - 0.5) * 2)),
+                    Math.max(-1, Math.min(1, ((e.clientY - r.top) / r.height - 0.5) * 2)));
+            };
+            area.addEventListener('pointermove', e => { if (e.pointerType === 'mouse' || e.pressure > 0) move(e); });
+            area.addEventListener('pointerdown', e => { clearTimeout(timer); move(e); });
+            area.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') release(); });
+            const up = e => { if (e.pointerType !== 'mouse') { clearTimeout(timer); timer = setTimeout(release, 700); } };
+            area.addEventListener('pointerup', up);
+            area.addEventListener('pointercancel', up);
+        };
+        const heroVisual = document.getElementById('heroVisual');
+        const stage = document.getElementById('stage');
+        if (heroVisual && stage) {
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(([entry]) => {
+                    heroVisual.classList.toggle('is-paused', !entry.isIntersecting);
+                }).observe(heroVisual);
+            }
+
+            const stack = heroVisual.querySelector('.stack');
+            const rig = heroVisual.querySelector('.case-rig');
+            if (!calm && stack && rig) {
+                // Зоны считаются по неподвижной разметке: книга — рамка .stack, футляр — его место с поправкой на перспективу.
+                // Сами предметы при наклоне двигаются, поэтому по ним ловить нельзя: край начал бы дрожать
+                let zones = null;
+                const measure = () => {
+                    const s = stack.getBoundingClientRect();
+                    const P = parseFloat(getComputedStyle(stack).perspective) || 1400;
+                    const z = new DOMMatrix(getComputedStyle(rig).transform).m43 || 0;
+                    const k = P / (P - z), mx = s.left + s.width / 2, my = s.top + s.height / 2;
+                    const fx = v => mx + (v - mx) * k, fy = v => my + (v - my) * k;
+                    const l = s.left + rig.offsetLeft, t = s.top + rig.offsetTop;
+                    const c = { left: fx(l), top: fy(t), right: fx(l + rig.offsetWidth), bottom: fy(t + rig.offsetHeight) };
+                    c.width = c.right - c.left;
+                    c.height = c.bottom - c.top;
+                    return { b: s, c };
+                };
+                const inside = (r, e) => e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+                follow(heroVisual, e => {
+                    if (!zones) zones = measure();
+                    if (inside(zones.c, e)) return { el: heroVisual, k: 'c', r: zones.c };
+                    if (inside(zones.b, e)) return { el: heroVisual, k: 'b', r: zones.b };
+                    return null;
+                });
+                const forget = () => { zones = null; };
+                heroVisual.addEventListener('pointerenter', forget);
+                addEventListener('scroll', forget, { passive: true });
+                addEventListener('resize', forget);
+            }
+        }
+
+        // Обложки в «Читать или слушать»: так же поворачиваются к курсору или пальцу и спокойно парят, пока видны
+        document.querySelectorAll('.format-media').forEach(media => {
+            const cover = media.querySelector('.format-cover');
+            if (!cover) return;
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(([entry]) => cover.classList.toggle('is-paused', !entry.isIntersecting)).observe(media);
+            }
+            if (calm) return;
+            const k = cover.classList.contains('is-audio') ? 'c' : 'b';
+            follow(media, () => ({ el: cover, k, r: media.getBoundingClientRect() }));
         });
 
-        // 2. INTERACTIVE 3D BOOK LOGIC
-        const book = document.getElementById('book3d');
-        const visualArea = document.querySelector('.hero-visual');
+        // 5. Оценка и возраст с ЛитРес: подставляются из litres.json рядом со страницей (его обновляет GitHub);
+        //    если файла нет (например, страница открыта с диска), остаются цифры, вписанные в страницу
+        const litres = () => fetch('litres.json', { cache: 'no-cache' })
+            .then(r => (r.ok ? r.json() : null))
+            .then(d => {
+                if (!d || !(d.rating >= 1 && d.rating <= 5)) return;
+                document.querySelectorAll('[data-litres="rating"]').forEach(el => { el.textContent = d.rating.toFixed(1).replace('.', ','); });
+                if (d.age > 0) document.querySelectorAll('[data-litres="age"]').forEach(el => { el.textContent = d.age + '+'; });
+            })
+            .catch(() => { });
+        if (/^https?:$/.test(location.protocol)) {
+            if ('requestIdleCallback' in window) requestIdleCallback(litres, { timeout: 3000 }); else setTimeout(litres, 1500);
+        }
 
-        if(visualArea && book) {
-            visualArea.addEventListener('mousemove', (e) => {
-                book.classList.remove('idle');
-                const rect = visualArea.getBoundingClientRect();
-                const x = e.clientX - rect.left; 
-                const y = e.clientY - rect.top;  
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = ((y - centerY) / centerY) * -15; 
-                const rotateY = ((x - centerX) / centerX) * 15;
-                
-                book.style.transform = `rotateX(${rotateX + 5}deg) rotateY(${rotateY - 20}deg) scale(1.05)`;
+        // 4. Нижняя панель: появляется, когда кнопки первого экрана ушли вверх, и прячется в финальном блоке и подвале (там своя золотая кнопка)
+        const bar = document.getElementById('bar');
+        const heroButtons = document.getElementById('heroButtons');
+        if (bar && heroButtons && 'IntersectionObserver' in window) {
+            let heroInView = true;
+            const endZone = new Set();
+            const update = () => bar.classList.toggle('is-hidden', heroInView || endZone.size > 0);
+            new IntersectionObserver(([entry]) => {
+                heroInView = entry.isIntersecting || entry.boundingClientRect.top > 0;
+                update();
+            }).observe(heroButtons);
+            const endObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => entry.isIntersecting ? endZone.add(entry.target) : endZone.delete(entry.target));
+                update();
             });
-
-            visualArea.addEventListener('mouseleave', () => {
-                book.classList.add('idle');
-                book.style.transform = ''; 
-            });
+            ['buy', 'footer'].forEach(id => { const el = document.getElementById(id); if (el) endObserver.observe(el); });
         }
     </script>
 </body>
+
 </html>
