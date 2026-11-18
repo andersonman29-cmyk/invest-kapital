@@ -1,0 +1,36 @@
+# Раз в сутки берёт оценку и возраст книги с ЛитРес и обновляет litres.json.
+# Если цифры не изменились, ничего не сохраняет. Запустить вручную: вкладка Actions → «Оценка с ЛитРес» → Run workflow.
+name: Оценка с ЛитРес
+
+on:
+  schedule:
+    - cron: '17 3 * * *'   # каждый день в 6:17 по Москве
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Взять цифры с ЛитРес
+        run: python3 .github/scripts/update_litres.py
+
+      - name: Сохранить, если цифры изменились
+        run: |
+          if git diff --quiet -- litres.json; then
+            echo "Без изменений"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add litres.json
+          git commit -m "Оценка с ЛитРес: обновление"
+          git push
+          # Попросить GitHub Pages пересобрать сайт (после изменения этим способом он сам не всегда пересобирается)
+          curl -s -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" || true
